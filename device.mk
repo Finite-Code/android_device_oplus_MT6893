@@ -543,5 +543,9 @@ PRODUCT_PACKAGES += \
     libprocessgroup_shim \
     libshim
 
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # Inherit from vendor blobs
 $(call inherit-product, vendor/oplus/MT6893/MT6893-vendor.mk)
