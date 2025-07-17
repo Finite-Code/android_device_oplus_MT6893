@@ -54,6 +54,7 @@ genfscon sysfs /class/oplus_sensor                                              
 
 # Oplus
 genfscon proc /oplusVersion                                                                 u:object_r:vendor_proc_oplus_version:s0
+genfscon proc /oplusVersion/prjName                                                         u:object_r:prjname_file:s0
 
 # Performance
 genfscon proc /sys/kernel/sched_stune_task_threshold                                        u:object_r:proc_sched_stune:s0 
