@@ -67,6 +67,8 @@ function blob_fixup {
         vendor/lib64/hw/sensors.mt6893.so)
             "$PATCHELF" --add-needed "libsensors_shim.so" "${2}"
             ;;
+        vendor/bin/hw/mtkfusionrild)
+            "$PATCHELF" --add-needed "libutils-v32.so" "${2}"
         vendor/bin/mnld)
             ;&
         vendor/lib64/libaalservice.so)
