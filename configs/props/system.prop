@@ -48,8 +48,7 @@ pm.dexopt.cmdline=verify
 pm.dexopt.shared=speed
 
 # Display
-ro.opengles.version=196610 
-sys.brightness.disable_gamma_conversion=true
+ro.opengles.version=196610
 
 # IMS
 persist.dbg.volte_avail_ovr=1
