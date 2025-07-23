@@ -105,5 +105,5 @@ void vendor_load_properties() {
     set_ro_build_prop("product", model, false);
 
     // Optional: global ro.device override
-    property_override("ro.device", device.c_str());
+    property_override("ro.vendor.device", device.c_str());
 }

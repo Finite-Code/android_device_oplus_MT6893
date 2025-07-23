@@ -5,6 +5,6 @@
     <overlay android:targetPackage="android"
              android:isStatic="true"
              android:priority="10"
-             android:requiredSystemPropertyName="ro.device"
+             android:requiredSystemPropertyName="ro.vendor.device"
              android:requiredSystemPropertyValue="cupida"/>
 </manifest>
