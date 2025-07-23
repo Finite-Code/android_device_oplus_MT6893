@@ -420,8 +420,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
     WifiOverlay \
-    DozeOverlaySystem \
-    DozeOverlaySystemUI \
     OplusDozeOverlay \
     OPlusSettingsResTarget \
     FrameworkResOverlayCupida \
