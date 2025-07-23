@@ -1,0 +1,4 @@
+on early-init
+    mkdir /mnt/odm_fw 0755 root root
+    mkdir /mnt/odm_fw/firmware 0755 root root
+    exec - root root -- /vendor/bin/init_MT6893_vendor

@@ -229,6 +229,9 @@ $(call soong_config_set,libinit,vendor_init_lib,//$(DEVICE_PATH):libinit_MT6893)
 # UDFPS
 $(call soong_config_set,surfaceflinger,udfps_lib,//$(DEVICE_PATH):libudfps_extension.MT6893)
 
+PRODUCT_PACKAGES += \
+   init_MT6893_vendor
+
 # Keymaster
 PRODUCT_PACKAGES += \
    android.hardware.keymaster@3.0.vendor \

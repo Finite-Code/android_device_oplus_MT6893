@@ -339,6 +339,10 @@ odm/etc/audio/test_path/common/mixer_paths.xml
 odm/etc/audio/test_path/mixer_paths.xml
 odm/etc/audio/oplus_audio_features.xml
 
+# Audio Firmware
+odm/firmware/tfa98xx.cnt
+odm/firmware/tfa98xx_t0.cnt
+
 # AudioPolicyConfigs
 vendor/etc/audio_policy_configuration_a2dp_offload_disabled.xml
 vendor/etc/audio_policy_configuration_a2dp_offload_disabled_cg_enabled.xml
@@ -1313,7 +1317,6 @@ odm/firmware/aw8697_haptic_170.bin
 odm/firmware/aw8697_haptic_170_soft.bin
 odm/firmware/aw8697_haptic_235.bin
 odm/firmware/aw8697_haptic_235_19161.bin
-odm/firmware/tfa98xx.cnt
 vendor/firmware/BT_FW.cfg
 vendor/firmware/WIFI_RAM_CODE_soc3_0_1a_1.bin
 vendor/firmware/conninfra.cfg

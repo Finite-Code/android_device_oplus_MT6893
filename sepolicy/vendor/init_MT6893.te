@@ -1,0 +1,9 @@
+type init_MT6893, domain;
+type init_MT6893_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(init_MT6893)
+set_prop(init_MT6893, vendor_device_prop)
+
+allow init_MT6893 odm_fw_file:dir rw_dir_perms;
+allow init_MT6893 odm_fw_file:file create_file_perms;
+allow init_MT6893 odm_fw_file:lnk_file { create_file_perms r_file_perms };

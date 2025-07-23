@@ -11,6 +11,9 @@ vendor.fingerprint.                                             u:object_r:vendo
 vendor.debug.cameralog.enable                                   u:object_r:vendor_oplus_prop:s0
 vendor.debug.tpi.                                               u:object_r:vendor_oplus_prop:s0
 
+# Device
+ro.vendor.device                                                u:object_r:vendor_device_prop:s0
+
 # PQ
 ro.vendor.mtk_hdr_video_support                                 u:object_r:vendor_mtk_pq_ro_prop:s0
 

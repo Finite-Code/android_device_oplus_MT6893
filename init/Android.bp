@@ -14,3 +14,11 @@ cc_library_static {
         "system/core/init"
     ]
 }
+
+cc_binary {
+    name: "init_MT6893_vendor",
+    srcs: ["init_MT6893_vendor.cpp"],
+    shared_libs: ["libbase"],
+    init_rc: ["init_MT6893_vendor.rc"],
+    vendor: true,
+}
