@@ -20,6 +20,7 @@ DEVICE_PATH := device/oplus/MT6893
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 PRODUCT_SHIPPING_API_LEVEL := 30
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
 
 # Call proprietary blob setup
 $(call inherit-product-if-exists, packages/apps/OneplusParts/parts.mk)
