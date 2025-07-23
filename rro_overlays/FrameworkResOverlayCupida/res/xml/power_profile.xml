@@ -18,6 +18,7 @@
 -->
 
 <device name="Android">
+
   <!-- Most values are the incremental current used by a feature,
        in mA (measured at nominal voltage).
        The default values are deliberately incorrect dummy values.

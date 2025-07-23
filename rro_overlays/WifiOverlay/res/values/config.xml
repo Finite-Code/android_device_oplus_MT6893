@@ -46,4 +46,5 @@
 
    <!-- boolean indicating whether the WiFi chipset has 6GHz band support -->
     <bool translatable="false" name="config_wifi6ghzSupport">true</bool>
+
 </resources>

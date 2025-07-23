@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2018-2022 The LineageOS Project
+     Copyright (C) 2018-2024 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,10 +15,14 @@
      limitations under the License.
 -->
 <resources>
+
     <!-- Color of the UDFPS view -->
     <color name="config_udfpsColor">#00ffffff</color>
 
-    <!-- Use framework FOD dimming instead of kernel dimming -->
+    <!-- Whether to enable framework dimming for UDFPS -->
     <bool name="config_udfpsFrameworkDimming">true</bool>
+
+    <!-- Doze: does the double tap sensor need a proximity check? -->
+    <bool name="doze_double_tap_proximity_check">true</bool>
 
 </resources>

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ancient.frameworkresoverlay.mt6893">
+    package="com.android.frameworkresoverlay.mt6893">
 
     <application android:hasCode="false" />
     <overlay android:targetPackage="android"
