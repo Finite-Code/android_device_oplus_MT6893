@@ -23,6 +23,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Call proprietary blob setup
 $(call inherit-product-if-exists, packages/apps/OneplusParts/parts.mk)
+$(call inherit-product-if-exists, vendor/oplus/camera/camera.mk)
 $(call inherit-product-if-exists, packages/apps/PocketMode/pocket_mode.mk)
 
 # Vendor Log Tag
@@ -121,8 +122,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libcamera_metadata_shim
-
-$(call inherit-product-if-exists, device/oplus/camera/camera.mk)
 
 # Display
 PRODUCT_PACKAGES += \
