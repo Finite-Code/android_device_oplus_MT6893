@@ -203,6 +203,9 @@ PRODUCT_PACKAGES += \
 # Init
 $(call soong_config_set,libinit,vendor_init_lib,//$(DEVICE_PATH):libinit_MT6893)
 
+# UDFPS
+$(call soong_config_set,surfaceflinger,udfps_lib,//$(DEVICE_PATH):libudfps_extension.MT6893)
+
 # Keymaster
 PRODUCT_PACKAGES += \
    android.hardware.keymaster-V3-ndk_platform.vendor \
@@ -485,9 +488,6 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0.vendor \
     android.hardware.thermal@1.0-impl
 
-# UDFPS
-$(call soong_config_set,surfaceflinger,udfps_lib,//$(DEVICE_PATH):libudfps_extension.MT6893)
-
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.3-service-mediatekv2
@@ -545,7 +545,6 @@ PRODUCT_PACKAGES += \
     libbase_shim \
     libprocessgroup_shim \
     libshim
-
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/oplus/MT6893/MT6893-vendor.mk)
