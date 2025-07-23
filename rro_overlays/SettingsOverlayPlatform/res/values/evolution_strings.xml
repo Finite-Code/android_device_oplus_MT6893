@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2019-2024 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <!-- About device screen, build maintainer -->
+    <string name="build_maintainer_summary">Liwhy</string>
+    <string name="build_maintainer_donate_url">t.me/liwhy1</string>
+
+</resources>
