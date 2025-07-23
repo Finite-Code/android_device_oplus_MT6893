@@ -69,6 +69,9 @@
 # ORMS Hal
 /(vendor|odm)/bin/hw/vendor\.oplus\.hardware\.orms\.ormsHalService@1\.0-service                         u:object_r:oplus_hal_ormsHal_exec:s0
 
+# OLC Hal 
+/(odm|vendor/odm)/bin/hw/vendor\.oplus\.hardware\.olc@2\.0-service                                      u:object_r:hal_olc_oplus_exec:s0
+
 # Performance
 /(odm|vendor/odm)/bin/hw/vendor\.oplus\.hardware\.performance@1\.0-service                              u:object_r:hal_performance_oplus_exec:s0
 
