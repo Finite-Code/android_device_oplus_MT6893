@@ -40,6 +40,29 @@ TARGET_SCREEN_WIDTH := 1080
 PRODUCT_AAPT_CONFIG := xxxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 
+# Overlays
+PRODUCT_PACKAGES += \
+    CarrierConfigOverlay \
+    FrameworkResOverlayCupida \
+    FrameworkResOverlayDenniz \
+    FrameworkResOverlayPlatform \
+    OplusDozeOverlay \
+    SettingsOverlayPlatform \
+    SettingsProviderOverlay \
+    SystemUIOverlayPlatform \
+    TelephonyOverlay \
+    TetheringConfigOverlay \
+    WifiOverlay \
+    WifiOverlayCupida \
+    WifiOverlayDenniz
+
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-lineage
+
+# Enforce RRO targets
+PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+
 # Updater
 AB_OTA_UPDATER := false
 
@@ -287,20 +310,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/permissions/nfc_features.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/nfc_features.xml
 
-# Overlays
-PRODUCT_PACKAGES += \
-    FrameworkResOverlayPlatform \
-    SystemUIOverlayPlatform \
-    SettingsOverlayPlatform \
-    TelephonyOverlay \
-    CarrierConfigOverlay
-
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
-
-# Enforce RRO targets
-PRODUCT_ENFORCE_RRO_TARGETS := *
-
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
@@ -415,19 +424,6 @@ PRODUCT_PACKAGES += \
     fstab.mt6893.ramdisk \
     ueventd.oplus.rc \
     ueventd.mtk.rc
-
-# Rro
-PRODUCT_PACKAGES += \
-    TetheringConfigOverlay \
-    WifiOverlay \
-    OplusDozeOverlay \
-    OPlusSettingsResTarget \
-    FrameworkResOverlayCupida \
-    SettingsProviderOverlayCupida \
-    WifiOverlayCupida \
-    FrameworkResOverlayDenniz \
-    SettingsProviderOverlayDenniz \
-    WifiOverlayDenniz
 
 # Soundtrigger
 PRODUCT_PACKAGES += \
