@@ -17,7 +17,7 @@
 /sys/devices/platform/disp-leds/leds/lcd-backlight(/.*)?   u:object_r:sysfs_leds:s0
 
 # Vibrator
-/vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service                               u:object_r:hal_vibrator_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator-service.mt6893                               u:object_r:hal_vibrator_default_exec:s0
 
 # Nfc
 /dev/nq-nci                                                                                             u:object_r:nfc_device:s0
