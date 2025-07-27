@@ -16,8 +16,12 @@ allow alert-slider_daemon input_device:chr_file { open read write ioctl };
 allow alert-slider_daemon audio_service:service_manager { find };
 allow alert-slider_daemon service_call_exec:file { execute execute_no_trans read open map getattr };
 
-allow alert-slider_daemon sysfs_leds:dir search;
-allow alert-slider_daemon sysfs_vibrator:file { open write };
-
 binder_call(alert-slider_daemon, system_server)
 binder_call(alert-slider_daemon, servicemanager)
+
+# Vibrator
+allow alert-slider_daemon sysfs:file { write open };
+allow alert-slider_daemon self:capability dac_override;
+allow alert-slider_daemon sysfs_leds:dir search;
+allow alert-slider_daemon sysfs_vibrator:file { open write };
+allow alert-slider_daemon sysfs_vibrator:dir { search }
