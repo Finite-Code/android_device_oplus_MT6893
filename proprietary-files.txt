@@ -341,7 +341,6 @@ odm/etc/audio/oplus_audio_features.xml
 
 # Audio Firmware
 odm/firmware/tfa98xx.cnt
-odm/firmware/tfa98xx_t0.cnt
 
 # AudioPolicyConfigs
 vendor/etc/audio_policy_configuration_a2dp_offload_disabled.xml

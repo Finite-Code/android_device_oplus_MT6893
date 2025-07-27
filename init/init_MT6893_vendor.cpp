@@ -17,7 +17,7 @@ int main() {
     std::string target;
 
     if (device == "cupida") {
-        target = "/odm/firmware/tfa98xx_t0.cnt";
+        target = "/odm/etc/audio/smartpa_param/tfa98xx.cnt";
     } else {
         target = "/odm/firmware/tfa98xx.cnt";
     }
