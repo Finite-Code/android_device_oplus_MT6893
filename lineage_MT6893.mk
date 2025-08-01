@@ -27,7 +27,7 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # EvolutionX Flags
 EVO_BUILD_TYPE := Unofficial
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_BUILD_APERTURE_CAMERA := true
+TARGET_BUILD_APERTURE_CAMERA := false
 TARGET_HAS_UDFPS := true
 TARGET_SUPPORTS_QUICK_TAP := true
 

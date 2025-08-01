@@ -20,8 +20,8 @@ binder_call(alert-slider_daemon, system_server)
 binder_call(alert-slider_daemon, servicemanager)
 
 # Vibrator
-allow alert-slider_daemon sysfs:file { write open };
+allow alert-slider_daemon sysfs:file { write open read };
 allow alert-slider_daemon self:capability dac_override;
 allow alert-slider_daemon sysfs_leds:dir search;
 allow alert-slider_daemon sysfs_vibrator:file { open write };
-allow alert-slider_daemon sysfs_vibrator:dir { search }
+allow alert-slider_daemon sysfs_vibrator:dir { search };

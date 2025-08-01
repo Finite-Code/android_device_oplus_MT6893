@@ -39,10 +39,11 @@ void vibrationHandler(const char* type) {
     constexpr const char* duration = "/sys/class/leds/vibrator/duration";
     constexpr const char* active = "/sys/class/leds/vibrator/activate";
     constexpr const char* motor_old = "/sys/class/leds/vibrator/motor_old";
+    constexpr const char* gain = "/sys/class/leds/vibrator/gain";
 
     // store initial gain value
     char gain_val[8] = {0};
-    int gain_fd = open("/sys/class/leds/vibrator/gain", O_RDONLY);
+    int gain_fd = open(gain, O_RDONLY);
     if (gain_fd != -1) {
         ssize_t bytes_read = read(gain_fd, gain_val, sizeof(gain_val) - 1);
         if (bytes_read > 0) gain_val[bytes_read] = '\0';
@@ -61,6 +62,7 @@ void vibrationHandler(const char* type) {
     // trigger long vibrator once
     if (strcmp(type, "long") == 0) {
         writeToFile(duration, "400");
+        writeToFile(gain, "45");
         writeToFile(active, "1");
         usleep(400 * 1000);
         writeToFile(active, "0");
@@ -77,7 +79,7 @@ void vibrationHandler(const char* type) {
     }
 
     // reset leds
-    writeToFile("/sys/class/leds/vibrator/gain", gain_val);
+    writeToFile(gain, gain_val);
     writeToFile("/sys/class/leds/vibrator/waveform_index", "0x0a");
 }
 
@@ -102,6 +104,7 @@ int main() {
     ioctl(fd, EVIOCGRAB, 1);
 
     struct input_event ev;
+    int last_state = -1;
     while (read(fd, &ev, sizeof(ev)) != 0) {
         if (!(ev.code == 61 && ev.value == 0)) continue;
         int state = read_tristate();
@@ -111,9 +114,10 @@ int main() {
         } else if (state == 2) {
             system("service call audio 49 i32 1 s16 android");
             vibrationHandler("short");
-        } else if (state == 3) {
+        } else if (state == 3 && last_state != state) {
             system("service call audio 49 i32 2 s16 android");
             vibrationHandler("long");
         }
+        last_state = state;
     }
 }
