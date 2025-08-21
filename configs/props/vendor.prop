@@ -213,6 +213,9 @@ ro.vendor.mtk_nn_quant_preferred=1
 ro.vendor.mtk_nn_baseline_support=1
 debug.mtk_tflite.target_nnapi=29
 
+# Power HAL
+vendor.powerhal.disp.idle_support=false
+
 # Radio
 persist.vendor.radio.fd.counter=150
 persist.vendor.radio.fd.off.counter=50
