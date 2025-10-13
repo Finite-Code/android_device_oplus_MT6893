@@ -170,6 +170,7 @@ ro.lmk.kill_timeout_ms=100
 ro.lmk.nandswap_version=2
 ro.lmk.psi_scrit_complete_stall_ms=150
 ro.lmk.swap_is_low_kill_enable=1
+ro.config.low_ram=false
 
 # Media
 ro.vendor.jpeg_decode_sw_opt=2
