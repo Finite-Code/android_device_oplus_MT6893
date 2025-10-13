@@ -106,7 +106,7 @@ void vendor_load_properties() {
 
     // Optional: global ro.device override
     property_override("ro.vendor.device", device.c_str());
-	
+
     // Set gamma conversion prop for denniz
     if (device == "denniz") {
         property_override("sys.brightness.disable_gamma_conversion", "0");
