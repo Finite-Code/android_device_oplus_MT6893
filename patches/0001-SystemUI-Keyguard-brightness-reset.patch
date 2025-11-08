@@ -1,0 +1,186 @@
+From 0c73f0406f331eecb99372e45fca1c62f9f74885 Mon Sep 17 00:00:00 2001
+From: liwhy1
+Date: Tue, 19 Aug 2025 16:10:40 +0200
+Subject: [PATCH] SystemUI: Keyguard brightness reset
+
+---
+ .../biometrics/AuthContainerView.java         | 27 +++++++++++
+ .../systemui/biometrics/UdfpsController.java  | 45 +++++++++++++++++++
+ .../keyguard/KeyguardViewMediator.java        | 22 +++++++++
+ 3 files changed, 94 insertions(+)
+
+diff --git a/frameworks/base/packages/SystemUI/src/com/android/systemui/biometrics/AuthContainerView.java b/frameworks/base/packages/SystemUI/src/com/android/systemui/biometrics/AuthContainerView.java
+index f2e2a2a1a976..ddb0c1acb742 100644
+--- a/frameworks/base/packages/SystemUI/src/com/android/systemui/biometrics/AuthContainerView.java
++++ b/frameworks/base/packages/SystemUI/src/com/android/systemui/biometrics/AuthContainerView.java
+@@ -91,6 +91,13 @@ import java.util.Set;
+ 
+ import javax.inject.Provider;
+ 
++import com.android.systemui.util.settings.SystemSettings;
++import android.provider.Settings;
++import android.content.ContentResolver;
++import android.provider.Settings.SettingNotFoundException;
++import android.os.Handler;
++import android.os.Looper;
++
+ /**
+  * Top level container/controller for the BiometricPrompt UI.
+  *
+@@ -691,6 +698,26 @@ public class AuthContainerView extends LinearLayout
+                     .withEndAction(endActionRunnable)
+                     .start();
+         });
++        pokeBrightnessDelayed(mContext, 2000);
++    }
++
++    public void pokeBrightnessDelayed(Context context, long delayMs) {
++        new Handler(Looper.getMainLooper()).postDelayed(() -> {
++           pokeBrightness(context);
++       }, delayMs);
++    }
++
++    public void pokeBrightness(Context context) {
++        ContentResolver cr = context.getContentResolver();
++        try {
++            int cur = Settings.System.getInt(cr, Settings.System.SCREEN_BRIGHTNESS);
++            int tmp = (cur + 2) % 256;
++            Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS, tmp);
++            Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS, cur);
++            Log.i(TAG, "Brightness poke done: original=" + cur + " temporary=" + tmp);
++        } catch (Settings.SettingNotFoundException e) {
++            Log.w(TAG, "Failed to read/write screen_brightness", e);
++        }
+     }
+ 
+     private void sendPendingCallbackIfNotNull() {
+diff --git a/frameworks/base/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsController.java b/frameworks/base/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsController.java
+index c8060c84aa1a..ebe9a9acf0ba 100644
+--- a/frameworks/base/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsController.java
++++ b/frameworks/base/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsController.java
+@@ -132,6 +132,11 @@ import java.util.concurrent.Executor;
+ 
+ import javax.inject.Inject;
+ 
++import com.android.systemui.util.settings.SystemSettings;
++import android.provider.Settings;
++import android.content.ContentResolver;
++import android.provider.Settings.SettingNotFoundException;
++
+ /**
+  * Shows and hides the under-display fingerprint sensor (UDFPS) overlay, handles UDFPS touch events,
+  * and toggles the UDFPS display mode.
+@@ -351,9 +356,29 @@ public class UdfpsController implements DozeReceiver, Dumpable {
+                 }
+ 
+                 UdfpsController.this.hideUdfpsOverlay();
++                pokeBrightnessDelayed(mContext, 2000);
+             });
+         }
+ 
++        public void pokeBrightnessDelayed(Context context, long delayMs) {
++            new Handler(Looper.getMainLooper()).postDelayed(() -> {
++               pokeBrightness(context);
++           }, delayMs);
++        }
++
++        public void pokeBrightness(Context context) {
++            ContentResolver cr = context.getContentResolver();
++            try {
++                int cur = Settings.System.getInt(cr, Settings.System.SCREEN_BRIGHTNESS);
++                int tmp = (cur + 2) % 256;
++                Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS, tmp);
++                Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS, cur);
++                Log.i(TAG, "Brightness poke done: original=" + cur + " temporary=" + tmp);
++            } catch (Settings.SettingNotFoundException e) {
++                Log.w(TAG, "Failed to read/write screen_brightness", e);
++            }
++        }
++
+         @Override
+         public void onAcquired(
+                 int sensorId,
+@@ -953,6 +978,26 @@ public class UdfpsController implements DozeReceiver, Dumpable {
+ 
+         mOverlay = null;
+         mOrientationListener.disable();
++        pokeBrightnessDelayed(mContext, 2000);
++    }
++
++    public void pokeBrightnessDelayed(Context context, long delayMs) {
++        new Handler(Looper.getMainLooper()).postDelayed(() -> {
++           pokeBrightness(context);
++       }, delayMs);
++    }
++
++    public void pokeBrightness(Context context) {
++        ContentResolver cr = context.getContentResolver();
++        try {
++            int cur = Settings.System.getInt(cr, Settings.System.SCREEN_BRIGHTNESS);
++            int tmp = (cur + 2) % 256;
++            Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS, tmp);
++            Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS, cur);
++            Log.i(TAG, "Brightness poke done: original=" + cur + " temporary=" + tmp);
++        } catch (Settings.SettingNotFoundException e) {
++            Log.w(TAG, "Failed to read/write screen_brightness", e);
++        }
+     }
+ 
+     private void unconfigureDisplay(View view) {
+diff --git a/frameworks/base/packages/SystemUI/src/com/android/systemui/keyguard/KeyguardViewMediator.java b/frameworks/base/packages/SystemUI/src/com/android/systemui/keyguard/KeyguardViewMediator.java
+index 0e2dc956f4db..3a2bf52ad25f 100644
+--- a/frameworks/base/packages/SystemUI/src/com/android/systemui/keyguard/KeyguardViewMediator.java
++++ b/frameworks/base/packages/SystemUI/src/com/android/systemui/keyguard/KeyguardViewMediator.java
+@@ -882,6 +882,25 @@ public class KeyguardViewMediator implements CoreStartable,
+         }
+     };
+ 
++    public void pokeBrightnessDelayed(Context context, long delayMs) {
++        new Handler(Looper.getMainLooper()).postDelayed(() -> {
++            pokeBrightness(context);
++        }, delayMs);
++    }
++
++    public void pokeBrightness(Context context) {
++        ContentResolver cr = context.getContentResolver();
++        try {
++            int cur = Settings.System.getInt(cr, Settings.System.SCREEN_BRIGHTNESS);
++            int tmp = (cur + 1) % 256;
++            Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS, tmp);
++            Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS, cur);
++            Log.i(TAG, "Brightness poke done: original=" + cur + " temporary=" + tmp);
++        } catch (Settings.SettingNotFoundException e) {
++            Log.w(TAG, "Failed to read/write screen_brightness", e);
++        }
++    }
++
+     ViewMediatorCallback mViewMediatorCallback = new ViewMediatorCallback() {
+ 
+         @Override
+@@ -2363,6 +2382,7 @@ public class KeyguardViewMediator implements CoreStartable,
+                         + mPowerGestureIntercepted);
+             }
+         }
++        pokeBrightnessDelayed(mContext, 2000);
+         Trace.endSection();
+     }
+ 
+@@ -2865,6 +2885,7 @@ public class KeyguardViewMediator implements CoreStartable,
+                     break;
+             }
+             Log.d(TAG, "KeyguardViewMediator queue processing message: " + message);
++            pokeBrightnessDelayed(mContext, 2000);
+         }
+     };
+ 
+@@ -2917,6 +2938,7 @@ public class KeyguardViewMediator implements CoreStartable,
+             mKeyguardInteractor.keyguardDoneAnimationsFinished();
+             mUpdateMonitor.clearFingerprintRecognizedWhenKeyguardDone(currentUser);
+         }
++        pokeBrightnessDelayed(mContext, 2000);
+         Trace.endSection();
+     }
+ 
+-- 
+2.51.2.windows.1
+
