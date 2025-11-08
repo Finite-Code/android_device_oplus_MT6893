@@ -21,6 +21,43 @@
 
     <!-- Whether to enable framework dimming for UDFPS -->
     <bool name="config_udfpsFrameworkDimming">true</bool>
+	
+    <!-- Brightness-to-alpha lookup table (LUT) for UDFPS framework dimming.
+         Each entry is in the format <brightness>,<alpha> where:
+           - brightness = panel backlight level
+           - alpha = dim layer transparency applied at that brightness
+         Rules:
+           • The entries should be strictly ascending by brightness.
+           • First entry = <minBrightness,maxAlpha>.
+           • Last entry  = <maxBrightness,minAlpha>.
+    -->
+    <string-array name="config_udfpsDimmingBrightnessAlphaArray" translatable="false">
+          <item>3,110</item>
+          <item>4,110</item>
+          <item>6,110</item>
+          <item>10,110</item>
+          <item>17,110</item>
+          <item>20,110</item>
+          <item>30,110</item>
+          <item>45,110</item>
+          <item>70,110</item>
+          <item>100,80</item>
+          <item>150,80</item>
+          <item>227,80</item>
+          <item>300,80</item>
+          <item>400,45</item>
+          <item>500,45</item>
+          <item>600,45</item>
+          <item>800,45</item>
+          <item>1023,13</item>
+          <item>1130,13</item>
+          <item>1211,13</item>
+          <item>1394,13</item>
+          <item>1598,3</item>
+          <item>1817,3</item>
+          <item>2047,3</item>
+          <item>4095,3</item>
+    </string-array>
 
     <!-- Doze: does the double tap sensor need a proximity check? -->
     <bool name="doze_double_tap_proximity_check">true</bool>
