@@ -547,5 +547,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     RemovePackages
 
+# ADB Root
+PRODUCT_PACKAGES += \
+    adb_root
+
 # Inherit from vendor blobs
 $(call inherit-product, vendor/oplus/MT6893/MT6893-vendor.mk)
