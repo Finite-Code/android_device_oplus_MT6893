@@ -30,6 +30,7 @@ TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_BUILD_APERTURE_CAMERA := false
 TARGET_HAS_UDFPS := true
 TARGET_SUPPORTS_QUICK_TAP := true
+PERF_ANIM_OVERRIDE := true
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := lineage_MT6893
