@@ -52,7 +52,7 @@ genfscon proc /sensor/als_cali                                                  
 genfscon sysfs /devices/virtual/oplus_sensor                                                u:object_r:vendor_sysfs_oplus_virtual_sensor:s0
 genfscon sysfs /class/oplus_sensor                                                          u:object_r:vendor_sysfs_oplus_virtual_sensor:s0
 
-# Oplus
+# Versioning
 genfscon proc /oplusVersion                                                                 u:object_r:vendor_proc_oplus_version:s0
 genfscon proc /oplusVersion/prjName                                                         u:object_r:prjname_file:s0
 
@@ -111,3 +111,6 @@ genfscon proc /sys/vm/direct_swappiness                                         
 
 # TEE
 genfscon proc /tee_bind_core                                                                u:object_r:vendor_proc_fingerprint:s0
+
+# Alert Slider
+genfscon proc /tristatekey                                                                  u:object_r:vendor_proc_tri_state_key:s0

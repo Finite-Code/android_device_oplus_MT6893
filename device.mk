@@ -72,7 +72,8 @@ PRODUCT_PACKAGES += \
 
 # Alert slider
 PRODUCT_PACKAGES += \
-    alert-slider_daemon
+    KeyHandler \
+    tri-state-key-calibrate
 
 # Always use scudo for memory allocator
 PRODUCT_USE_SCUDO := true

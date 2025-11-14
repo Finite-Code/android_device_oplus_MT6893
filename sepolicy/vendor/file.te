@@ -51,9 +51,12 @@ type vendor_sysfs_oplus_virtual_sensor, fs_type, sysfs_type;
 type vendor_proc_oplus_sensor_cali, fs_type, proc_type;
 type vendor_proc_oplus_sensor_als, fs_type, proc_type;
 type oplus_sensor_file, data_file_type, file_type;
-type persist_engineer_file, file_type;
 
-# Oplus
+# Engineering
+type vendor_persist_engineer_file, file_type;
+type vendor_proc_engineer, fs_type, proc_type;
+
+# Versioning
 type vendor_proc_oplus_version, fs_type, proc_type;
 
 # Performance
@@ -62,3 +65,6 @@ type proc_sched_assist, fs_type, proc_type;
 
 # GPU
 type vendor_sysfs_gpu, fs_type, sysfs_type;
+
+# Alert Slider
+type vendor_proc_tri_state_key, fs_type, proc_type;

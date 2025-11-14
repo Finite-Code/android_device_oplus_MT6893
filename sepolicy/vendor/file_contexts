@@ -21,7 +21,6 @@
 
 # Vibrator
 /(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator-service.mt6893                               u:object_r:hal_vibrator_default_exec:s0
-/sys/class/leds/vibrator/motor_old                                                                      u:object_r:sysfs_vibrator:s0
 
 # Nfc
 /dev/nq-nci                                                                                             u:object_r:nfc_device:s0
@@ -49,8 +48,10 @@
 /dev/block/platform/bootdevice/by-name/oplus_custom                                                     u:object_r:oplus_block_device:s0
 /dev/block/sdc7                                                                                         u:object_r:oplus_block_device:s0
 /dev/block/sdc16                                                                                        u:object_r:oplus_block_device:s0
-/mnt/vendor/persist/engineermode(/.*)?                                                                  u:object_r:persist_engineer_file:s0
-/storage/persist/engineermode(/.*)?                                                                     u:object_r:persist_engineer_file:s0
+
+# Engineering
+/mnt/vendor/persist/engineermode(/.*)?                                                                  u:object_r:vendor_persist_engineer_file:s0
+/storage/persist/engineermode(/.*)?                                                                     u:object_r:vendor_persist_engineer_file:s0
 
 # Fingerprint
 /(odm|vendor/odm)/bin/hw/vendor\.oplus\.hardware\.biometrics\.fingerprint@2\.1-service                  u:object_r:hal_fingerprint_default_exec:s0
@@ -85,3 +86,6 @@
 
 # Perfmgr
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.pixel-libperfmgr                       u:object_r:hal_power_default_exec:s0
+
+# Alert Slider
+/(vendor|system/vendor)/bin/tri-state-key-calibrate                                                     u:object_r:tri-state-key-calibrate_exec:s0
