@@ -15,6 +15,7 @@ import android.util.Log
 
 class DozeService : Service() {
     private lateinit var pickupSensor: PickupSensor
+    private lateinit var pocketSensor: PocketSensor
 
     private val screenStateReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -32,6 +33,11 @@ class DozeService : Service() {
             resources.getString(R.string.pickup_sensor_type),
             resources.getFloat(R.dimen.pickup_sensor_value),
         )
+        pocketSensor = PocketSensor(
+            this,
+            resources.getString(R.string.pocket_sensor_type),
+            resources.getFloat(R.dimen.pocket_sensor_value)
+        )
 
         val screenStateFilter = IntentFilter()
         screenStateFilter.addAction(Intent.ACTION_SCREEN_ON)
@@ -48,6 +54,7 @@ class DozeService : Service() {
 
         unregisterReceiver(screenStateReceiver)
         pickupSensor.disable()
+        pocketSensor.disable()
     }
 
     override fun onBind(intent: Intent?): IBinder? = null
@@ -56,11 +63,17 @@ class DozeService : Service() {
         if (Utils.isPickUpEnabled(this)) {
             pickupSensor.disable()
         }
+        if (Utils.isPocketEnabled(this)) {
+            pocketSensor.disable()
+        }
     }
 
     private fun onDisplayOff() {
         if (Utils.isPickUpEnabled(this)) {
             pickupSensor.enable()
+        }
+        if (Utils.isPocketEnabled(this)) {
+            pocketSensor.enable()
         }
     }
 
