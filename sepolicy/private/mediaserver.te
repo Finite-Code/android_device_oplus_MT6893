@@ -1,1 +1,2 @@
 allow mediaserver package_native_service:service_manager find;
+allow mediaserver vendor_default_prop:file { read open };
