@@ -93,12 +93,19 @@ class KeyHandler(context: Context) : DeviceKeyHandler {
 
     private fun vibrateIfNeeded(mode: Int) {
         when (mode) {
-            AudioManager.RINGER_MODE_VIBRATE -> vibrator.vibrate(
-                MODE_VIBRATION_EFFECT,
-                HARDWARE_FEEDBACK_VIBRATION_ATTRIBUTES
-            )
+            AudioManager.RINGER_MODE_VIBRATE -> {
+                vibrator.vibrate(
+                    MODE_TICK_EFFECT,
+                    HARDWARE_FEEDBACK_VIBRATION_ATTRIBUTES
+                )
+                Thread.sleep(200)
+                vibrator.vibrate(
+                    MODE_TICK_EFFECT,
+                    HARDWARE_FEEDBACK_VIBRATION_ATTRIBUTES
+                )
+            }
             AudioManager.RINGER_MODE_NORMAL -> vibrator.vibrate(
-                MODE_NORMAL_EFFECT,
+                MODE_HEAVY_EFFECT,
                 HARDWARE_FEEDBACK_VIBRATION_ATTRIBUTES
             )
         }
@@ -181,7 +188,7 @@ class KeyHandler(context: Context) : DeviceKeyHandler {
             VibrationAttributes.createForUsage(VibrationAttributes.USAGE_HARDWARE_FEEDBACK)
 
         // Vibration effects
-        private val MODE_NORMAL_EFFECT = VibrationEffect.get(VibrationEffect.EFFECT_HEAVY_CLICK)
-        private val MODE_VIBRATION_EFFECT = VibrationEffect.get(VibrationEffect.EFFECT_DOUBLE_CLICK)
+        private val MODE_HEAVY_EFFECT = VibrationEffect.get(VibrationEffect.EFFECT_HEAVY_CLICK)
+        private val MODE_TICK_EFFECT = VibrationEffect.get(VibrationEffect.EFFECT_TICK)
     }
 }
