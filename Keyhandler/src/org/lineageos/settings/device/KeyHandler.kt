@@ -18,6 +18,7 @@ import android.os.Vibrator
 import android.provider.Settings
 import android.view.KeyEvent
 import com.android.internal.os.DeviceKeyHandler
+import android.util.Log
 
 import java.io.File
 import java.util.concurrent.Executors
@@ -39,6 +40,7 @@ class KeyHandler(context: Context) : DeviceKeyHandler {
     private val executorService = Executors.newSingleThreadExecutor()
 
     private var wasMuted = false
+    private var lastPosition = -1
     private val broadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             when (intent.action) {
@@ -121,6 +123,10 @@ class KeyHandler(context: Context) : DeviceKeyHandler {
             POSITION_BOTTOM -> sharedPreferences.getString(ALERT_SLIDER_BOTTOM_KEY, "2")!!.toInt()
             else -> return
         }
+
+        if (lastPosition == position) return
+        Log.d("KeyHandler", "Updated state from: $lastPosition to: $position")
+        lastPosition = position
 
         executorService.submit {
             when (mode) {
