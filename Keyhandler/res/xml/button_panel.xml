@@ -13,6 +13,12 @@
             android:summary="@string/alert_slider_mute_media_summary"
             android:defaultValue="0" />
 
+        <SwitchPreference
+            android:key="config_enable_haptics"
+            android:title="@string/alert_slider_enable_haptics_title"
+            android:summary="@string/alert_slider_enable_haptics_summary"
+            android:defaultValue="1" />
+
         <ListPreference
             android:key="config_top_position"
             android:dialogTitle="@string/alert_slider_selection_dialog_title"

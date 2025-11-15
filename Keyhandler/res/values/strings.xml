@@ -19,4 +19,6 @@
     <string name="alert_slider_mode_dnd_alarms_only">Alarms only</string>
     <string name="alert_slider_mute_media_title">Mute media</string>
     <string name="alert_slider_mute_media_summary">Mute media when switching to silent</string>
+    <string name="alert_slider_enable_haptics_title">Haptic feedback</string>
+    <string name="alert_slider_enable_haptics_summary">Enable haptic feedback when switching states</string>
 </resources>

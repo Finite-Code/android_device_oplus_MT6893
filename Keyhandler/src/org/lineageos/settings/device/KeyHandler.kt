@@ -113,6 +113,7 @@ class KeyHandler(context: Context) : DeviceKeyHandler {
 
     private fun handleMode(position: Int, vibrate: Boolean) {
         val muteMedia = sharedPreferences.getBoolean(MUTE_MEDIA_WITH_SILENT, false)
+        val enableHaptics = sharedPreferences.getBoolean(ENABLE_HAPTICS, true)
 
         val mode = when (position) {
             POSITION_TOP -> sharedPreferences.getString(ALERT_SLIDER_TOP_KEY, "0")!!.toInt()
@@ -147,7 +148,7 @@ class KeyHandler(context: Context) : DeviceKeyHandler {
                 }
             }
 
-            if (vibrate) {
+            if (vibrate && enableHaptics) {
                 vibrateIfNeeded(mode)
             }
         }
@@ -176,6 +177,7 @@ class KeyHandler(context: Context) : DeviceKeyHandler {
         private const val ALERT_SLIDER_MIDDLE_KEY = "config_middle_position"
         private const val ALERT_SLIDER_BOTTOM_KEY = "config_bottom_position"
         private const val MUTE_MEDIA_WITH_SILENT = "config_mute_media"
+        private const val ENABLE_HAPTICS = "config_enable_haptics"
 
         // ZEN constants
         private const val ZEN_OFFSET = 2
