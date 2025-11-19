@@ -16,6 +16,7 @@
 
 #include "HalProxy.h"
 
+#include "UdfpsHandler.h"
 #include <android/hardware/sensors/2.0/types.h>
 
 #include <android-base/file.h>
@@ -84,6 +85,7 @@ int64_t msFromNs(int64_t nanos) {
 HalProxy::HalProxy() {
     const char* kMultiHalConfigFile = "/vendor/etc/sensors/hals.conf";
     initializeSubHalListFromConfigFile(kMultiHalConfigFile);
+    mSubHalList.push_back(std::make_unique<SubHalWrapperV2_1>(new ::android::hardware::sensors::V2_1::subhal::implementation::InternalUdfpsSubHal()));
     init();
 }
 
