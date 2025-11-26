@@ -22,6 +22,7 @@ import android.util.Log
 
 import java.io.File
 import java.util.concurrent.Executors
+import android.os.SystemProperties
 
 class KeyHandler(context: Context) : DeviceKeyHandler {
     private val audioManager = context.getSystemService(AudioManager::class.java)!!
@@ -60,13 +61,16 @@ class KeyHandler(context: Context) : DeviceKeyHandler {
     }
 
     init {
-        context.registerReceiver(
-            broadcastReceiver,
-            IntentFilter().apply {
-                addAction(AudioManager.STREAM_MUTE_CHANGED_ACTION)
-                addAction(Intent.ACTION_BOOT_COMPLETED)
-            }
-        )
+        if (SystemProperties.get("ro.vendor.device", "") == "denniz")
+        {
+            context.registerReceiver(
+                broadcastReceiver,
+                IntentFilter().apply {
+                    addAction(AudioManager.STREAM_MUTE_CHANGED_ACTION)
+                    addAction(Intent.ACTION_BOOT_COMPLETED)
+                }
+            )
+        }
     }
 
     override fun handleKeyEvent(event: KeyEvent): KeyEvent? {
@@ -86,6 +90,7 @@ class KeyHandler(context: Context) : DeviceKeyHandler {
     }
 
     private fun populateKeyState(vibrate: Boolean) {
+        if (SystemProperties.get("ro.vendor.device", "") != "denniz") return
         when (File("/proc/tristatekey/tri_state").readText().trim()) {
             "1" -> handleMode(POSITION_TOP, vibrate)
             "2" -> handleMode(POSITION_MIDDLE, vibrate)
