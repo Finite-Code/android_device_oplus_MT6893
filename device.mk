@@ -124,7 +124,7 @@ PRODUCT_COPY_FILES += \
 
 TARGET_EXCLUDES_AUDIOFX := true
 
-$(call soong_config_set,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
+$(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
 
 # Bluetooth
 PRODUCT_PACKAGES += \
