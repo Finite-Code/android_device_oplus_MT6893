@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.settingsoverlay.lineage.mt6893">
+
+    <overlay android:targetPackage="org.lineageos.lineagesettings"
+             android:isStatic="true"
+             android:priority="250"/>
+</manifest>
