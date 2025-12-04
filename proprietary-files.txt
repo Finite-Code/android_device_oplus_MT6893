@@ -1059,15 +1059,6 @@ vendor/lib64/liboplus_mtkcam_lightsensorprovider.so
 vendor/lib64/liboplus_platform_hwi.so
 vendor/lib64/libstereoinfoaccessor_vsdof.so
 vendor/lib64/libtrm.so
-vendor/lib64/ov02b10_mipi_raw21015_IdxMgr.so
-vendor/lib64/ov02b10_mipi_raw_20615_IdxMgr.so
-vendor/lib64/ov02b10_mipi_raw_20619_IdxMgr.so
-vendor/lib64/ov02b10_mipi_raw_21061_IdxMgr.so
-vendor/lib64/ov02b10_mipi_raw_IdxMgr.so
-vendor/lib64/ov64b_mipi_raw_20619_IdxMgr.so
-vendor/lib64/ov64b_mipi_raw_21061_IdxMgr.so
-vendor/lib64/ov64b_mipi_raw_21651_IdxMgr.so
-vendor/lib64/ov64b_mipi_raw_IdxMgr.so
 vendor/lib64/vendor.mediatek.hardware.camera.atms@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.bgservice@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.bgservice@1.1.so
@@ -1496,7 +1487,6 @@ vendor/lib/libcodec2_soft_mtk_msadpcmdec.so
 vendor/lib/libcodec2_soft_mtk_wmadec.so
 vendor/lib/libcodec2_vpp_qt_plugin.so
 vendor/lib/libcodec2_vpp_rs_plugin.so
-vendor/lib/libformatter.so
 vendor/lib/libh264dec_customize.so
 vendor/lib/libh264dec_sa.ca7.so
 vendor/lib/libh264dec_sd.ca7.so
