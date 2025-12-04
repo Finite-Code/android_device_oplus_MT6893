@@ -543,10 +543,6 @@ PRODUCT_PACKAGES += \
     libprocessgroup_shim \
     libshim
 
-# Remove unwanted packages
-PRODUCT_PACKAGES += \
-    RemovePackages
-
 # ADB Root
 PRODUCT_PACKAGES += \
     adb_root
