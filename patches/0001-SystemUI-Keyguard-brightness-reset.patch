@@ -44,7 +44,7 @@ index f2e2a2a1a976..ddb0c1acb742 100644
 +        ContentResolver cr = context.getContentResolver();
 +        try {
 +            int cur = Settings.System.getInt(cr, Settings.System.SCREEN_BRIGHTNESS);
-+            int tmp = (cur + 2) % 256;
++            int tmp = Math.min(cur + 2, 255);
 +            Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS, tmp);
 +            Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS, cur);
 +            Log.i(TAG, "Brightness poke done: original=" + cur + " temporary=" + tmp);
@@ -88,7 +88,7 @@ index c8060c84aa1a..ebe9a9acf0ba 100644
 +            ContentResolver cr = context.getContentResolver();
 +            try {
 +                int cur = Settings.System.getInt(cr, Settings.System.SCREEN_BRIGHTNESS);
-+                int tmp = (cur + 2) % 256;
++                int tmp = Math.min(cur + 2, 255);
 +                Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS, tmp);
 +                Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS, cur);
 +                Log.i(TAG, "Brightness poke done: original=" + cur + " temporary=" + tmp);
@@ -117,7 +117,7 @@ index c8060c84aa1a..ebe9a9acf0ba 100644
 +        ContentResolver cr = context.getContentResolver();
 +        try {
 +            int cur = Settings.System.getInt(cr, Settings.System.SCREEN_BRIGHTNESS);
-+            int tmp = (cur + 2) % 256;
++            int tmp = Math.min(cur + 2, 255);
 +            Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS, tmp);
 +            Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS, cur);
 +            Log.i(TAG, "Brightness poke done: original=" + cur + " temporary=" + tmp);
@@ -145,7 +145,7 @@ index 0e2dc956f4db..3a2bf52ad25f 100644
 +        ContentResolver cr = context.getContentResolver();
 +        try {
 +            int cur = Settings.System.getInt(cr, Settings.System.SCREEN_BRIGHTNESS);
-+            int tmp = (cur + 1) % 256;
++            int tmp = Math.min(cur + 2, 255);
 +            Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS, tmp);
 +            Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS, cur);
 +            Log.i(TAG, "Brightness poke done: original=" + cur + " temporary=" + tmp);
