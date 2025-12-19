@@ -72,6 +72,9 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libui.so', 'libui_oplus.so'),
     'vendor/lib64/libcam.utils.sensorprovider.so': blob_fixup()
         .replace_needed('libsensorndkbridge.so', 'libsensorndkbridge-v30.so'),
+    'vendor/lib64/libsensor_custom.so': blob_fixup()
+        .binary_regex_replace(b'android.sensor.wise_light', b'android.sensor.light\x00\x00\x00\x00\x00')
+        .sig_replace('5B 00 01 00', '05 00 00 00'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

@@ -1881,7 +1881,7 @@ vendor/lib64/libhwm-oplus.so
 vendor/lib64/libhwm.so
 vendor/lib64/libksensor.so
 vendor/lib64/librgbwlightsensor.so
-vendor/lib64/libsensor_custom.so
+vendor/lib64/libsensor_custom.so|40f6a43cc664548b9b10581c8f26ebf12669d538
 
 # Swap
 vendor/bin/swap_enable.sh
