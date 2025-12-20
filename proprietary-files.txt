@@ -11,8 +11,8 @@ vendor/lib64/libaal_mtk.so
 vendor/lib64/libaalservice.so
 
 # ADSP
-odm/lib64/libadsprpc.so;MODULE_SUFFIX=_odm
-vendor/lib64/libadsprpc.so
+odm/lib64/libadsprpc.so;MODULE_SUFFIX=_odm;DISABLE_DEPS
+vendor/lib64/libadsprpc.so;DISABLE_DEPS
 
 # AEE
 vendor/lib/libaedv.so
@@ -39,10 +39,10 @@ vendor/lib64/vendor.mediatek.hardware.apuware.xrp@2.0.so
 # Audio
 odm/bin/hw/vendor.oplus.hardware.performance@1.0-service
 odm/etc/init/vendor.oplus.hardware.performance@1.0-service.rc
--odm/etc/vintf/manifest/manifest_oplus_performance.xml
+odm/etc/vintf/manifest/manifest_oplus_performance.xml
 odm/firmware/awinic_haptic_gun_params.bin
 odm/firmware/awinic_haptic_params.bin
--odm/framework/vendor.oplus.hardware.performance-V1.0-java.jar
+odm/framework/vendor.oplus.hardware.performance-V1.0-java.jar
 odm/lib/lib_aurisys_lvimfs.so
 odm/lib/libnxprecord.so
 odm/lib/libnxpsmartpaparser.so
@@ -59,7 +59,6 @@ vendor/lib/hw/android.hardware.audio@6.0-impl-mediatek.so
 vendor/lib/hw/android.hardware.audio@7.0-impl-mediatek.so
 vendor/lib/hw/audio.primary.mt6893.so
 vendor/lib/hw/audio.r_submix.mt6893.so
-vendor/lib/lib_bsscore.so
 vendor/lib/lib_iir.so
 vendor/lib/lib_speech_enh.so
 vendor/lib/libaudio_engineer_test.so
@@ -388,9 +387,9 @@ vendor/lib64/lib3a.af.core.so|0d3c747b1bb8a85289aae1226f9da70927103486
 odm/bin/hw/vendor.oplus.hardware.cammidasservice@1.0-service
 odm/etc/init/init.camera_update.rc
 odm/etc/init/vendor.oplus.hardware.cammidasservice@1.0-service.rc
--odm/etc/vintf/manifest/manifest_oplus_cammidasservice.xml
+odm/etc/vintf/manifest/manifest_oplus_cammidasservice.xml
 odm/lib/liblvimfs.so 
-odm/lib/liblvimfs_wrapper.so
+odm/lib/liblvimfs_wrapper.so;DISABLE_DEPS
 odm/lib/libstdc++.so;MODULE_SUFFIX=_odm
 odm/lib64/android.hardware.graphics.allocator@2.0.so;MODULE_SUFFIX=_odm
 odm/lib64/android.hardware.graphics.allocator@3.0.so;MODULE_SUFFIX=_odm
@@ -403,7 +402,7 @@ odm/lib64/imx355_mipi_raw20817_tuning.so
 odm/lib64/imx615_mipi_raw20817_tuning.so
 odm/lib64/imx766_mipi_raw20817_tuning.so
 odm/lib64/libBokehPre.so
-odm/lib64/libCOppLceTonemapAPI.so
+odm/lib64/libCOppLceTonemapAPI.so;DISABLE_DEPS
 odm/lib64/libCamera_hi846mipiraw20615_Capture_Preview.so
 odm/lib64/libCamera_hi846mipiraw20615_Capture_Preview_Zoom_2x.so
 odm/lib64/libCamera_hi846mipiraw20615_FaceBeauty_Capture.so
@@ -781,16 +780,14 @@ odm/lib64/libCamera_imx766mipiraw20817_zHDR_Face_Capture.so
 odm/lib64/libCamera_imx766mipiraw20817_zHDR_Scene_Capture.so
 odm/lib64/libDeVIS.so
 odm/lib64/libEIS.so
-odm/lib64/libFilterWrapper.so
 odm/lib64/libOGLManager.so
 odm/lib64/libRbsFlow.so
 odm/lib64/libRbsFlow_cap.so
-odm/lib64/libSuperTextWrapper.so
 odm/lib64/libVideoEnhance.so
 odm/lib64/libWaterMark.so
 odm/lib64/lib_rectify.so
-odm/lib64/libaiseg.so
-odm/lib64/libalCFR.so
+odm/lib64/libaiseg.so;DISABLE_DEPS
+odm/lib64/libalCFR.so;DISABLE_DEPS
 odm/lib64/libanc_np-loader.so
 odm/lib64/libapsexif.so
 odm/lib64/libapsjpeg.so
@@ -798,7 +795,7 @@ odm/lib64/libapspng.so
 odm/lib64/libcamera_core_hwi.so;MODULE_SUFFIX=_odm
 odm/lib64/libhyperlapse.so
 odm/lib64/liblvimfs.so
-odm/lib64/liblvimfs_wrapper.so
+odm/lib64/liblvimfs_wrapper.so;DISABLE_DEPS
 odm/lib64/libmindroid-app.so
 odm/lib64/libmindroid-framework.so
 odm/lib64/libml_util.so
@@ -811,51 +808,25 @@ odm/lib64/libremosaic_wrapper.so
 odm/lib64/libremosaiclib.so
 odm/lib64/libtfavib.so
 odm/lib64/libtflite_mtk_static.so
-odm/lib64/libui.so:odm/lib64/libui_oplus.so
+odm/lib64/libui.so:odm/lib64/libui_oplus.so;DISABLE_DEPS
 odm/lib64/libwatermark_photo.so
 odm/lib64/ov02b10_mipi_raw_20615_tuning.so
 odm/lib64/vendor.oplus.hardware.cammidasservice@1.0.so;MODULE_SUFFIX=_odm
 vendor/bin/hw/camerahalserver
 vendor/etc/init/camerahalserver.rc
-vendor/lib/hw/vendor.mediatek.hardware.camera.atms@1.0-impl.so
-vendor/lib/hw/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so
-vendor/lib/hw/vendor.mediatek.hardware.camera.isphal@1.0-impl.so
 vendor/lib/libMtkSpeechEnh.so
-vendor/lib/libcamdrv_imem.so
-vendor/lib/libcamdrv_isp.so
-vendor/lib/libcamdrv_tuning_mgr.so
-vendor/lib/libcamdrv_twin.so
-vendor/lib/libcamera_core_hwi.so
-vendor/lib/libcameracustom.camera.sensors.so
-vendor/lib/libcameracustom.eis.so
-vendor/lib/libcameracustom.so
-vendor/lib/libcustomer_cameradata.so
-vendor/lib/libdip_drv.so
-vendor/lib/libdip_imem.so
-vendor/lib/libdip_postproc.so
-vendor/lib/libeffecthal.base.so
+vendor/lib/libcamera_core_hwi.so;DISABLE_DEPS
+vendor/lib/libcustomer_cameradata.so;DISABLE_DEPS
 vendor/lib/libfgauge_gm30.so
-vendor/lib/libmtkares.so
 vendor/lib/libmtkcutils.so
-vendor/lib/libmtkhardware_legacy.so
-vendor/lib/libmtkisp_metadata.so
 vendor/lib/libmtklimiter_vendor.so
-vendor/lib/libmtknetutils.so
 vendor/lib/libmtkproperty.so
 vendor/lib/libmtkrillog.so
 vendor/lib/libmtkshifter_vendor.so
-vendor/lib/libmtkspparser.so
-vendor/lib/libmtksysutils.so
 vendor/lib/libocam_common.so
-vendor/lib/liboplus.aishutter.so
+vendor/lib/liboplus.aishutter.so;DISABLE_DEPS
 vendor/lib/liboplus_audio_config.so
-vendor/lib/liboplus_mtkcam_lightsensorprovider.so
-vendor/lib/liboplus_platform_hwi.so
-vendor/lib/libstereoinfoaccessor_vsdof.so
-vendor/lib/vendor.mediatek.hardware.camera.atms@1.0.so
-vendor/lib/vendor.mediatek.hardware.camera.bgservice@1.0.so
-vendor/lib/vendor.mediatek.hardware.camera.bgservice@1.1.so
-vendor/lib/vendor.mediatek.hardware.camera.isphal@1.0.so
+vendor/lib/liboplus_platform_hwi.so;DISABLE_DEPS
 vendor/lib/vendor.oplus.hardware.cammidasservice@1.0.so
 vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so
 vendor/lib64/hw/vendor.mediatek.hardware.camera.atms@1.0-impl.so
@@ -954,11 +925,11 @@ vendor/lib64/libcamdrv_imem.so
 vendor/lib64/libcamdrv_isp.so
 vendor/lib64/libcamdrv_tuning_mgr.so
 vendor/lib64/libcamdrv_twin.so
-vendor/lib64/libcamera_core_hwi.so
+vendor/lib64/libcamera_core_hwi.so;DISABLE_DEPS
 vendor/lib64/libcameracustom.camera.sensors.so
 vendor/lib64/libcameracustom.eis.so
 vendor/lib64/libcameracustom.so
-vendor/lib64/libcustomer_cameradata.so
+vendor/lib64/libcustomer_cameradata.so;DISABLE_DEPS
 vendor/lib64/libdip_drv.so
 vendor/lib64/libdip_imem.so
 vendor/lib64/libdip_postproc.so
@@ -1030,7 +1001,7 @@ vendor/lib64/libmtkcam_pipelinepolicy_factory.so
 vendor/lib64/libmtkcam_prerelease.so
 vendor/lib64/libmtkcam_rsc.so
 vendor/lib64/libmtkcam_scenariorecorder.so
-vendor/lib64/libmtkcam_stdutils.so
+vendor/lib64/libmtkcam_stdutils.so;DISABLE_CHECKELF
 vendor/lib64/libmtkcam_streamutils.so
 vendor/lib64/libmtkcam_synchelper.so
 vendor/lib64/libmtkcam_sysutils.so
@@ -1053,10 +1024,10 @@ vendor/lib64/libmtksysutils.so
 vendor/lib64/libmtktinyxml.so
 vendor/lib64/libmtkutils.so
 vendor/lib64/libocam_common.so
-vendor/lib64/liboplus.aishutter.so
+vendor/lib64/liboplus.aishutter.so;DISABLE_DEPS
 vendor/lib64/liboplus_audio_config.so
 vendor/lib64/liboplus_mtkcam_lightsensorprovider.so
-vendor/lib64/liboplus_platform_hwi.so
+vendor/lib64/liboplus_platform_hwi.so;DISABLE_DEPS
 vendor/lib64/libstereoinfoaccessor_vsdof.so
 vendor/lib64/libtrm.so
 vendor/lib64/vendor.mediatek.hardware.camera.atms@1.0.so
@@ -1120,18 +1091,18 @@ vendor/lib64/gc02m1b_mipi_mono_IdxMgr.so
 odm/etc/camera/CameraHWConfiguration.config
 
 # CDSP
-vendor/lib64/libcdsprpc.so
+vendor/lib64/libcdsprpc.so;DISABLE_DEPS
 
 # connectivity
 odm/etc/init/init.oplus.reserve.rc
 odm/etc/init/init.vendor.oplus.connectivity.rc
 
 # charger
-bin/kpoc_charger
-etc/init/kpoc_charger.rc
+system/bin/kpoc_charger;DISABLE_DEPS
+system/etc/init/kpoc_charger.rc
 odm/bin/hw/vendor.oplus.hardware.charger@1.0-service
 odm/etc/init/vendor.oplus.hardware.charger@1.0-service.rc
--odm/etc/vintf/manifest/manifest_oplus_charger.xml
+odm/etc/vintf/manifest/manifest_oplus_charger.xml
 odm/lib/vendor.oplus.hardware.charger@1.0.so
 odm/lib64/vendor.oplus.hardware.charger@1.0.so
 
@@ -1140,15 +1111,15 @@ odm/lib/liboemcrypto.so
 odm/lib64/liboemcrypto.so
 vendor/bin/hw/android.hardware.drm@1.4-service.widevine
 vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
--vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml
-vendor/lib/mediadrm/libwvdrmengine.so
+vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml
+vendor/lib/mediadrm/libwvdrmengine.so;DISABLE_DEPS
 vendor/lib/libtlcWidevineModularDrm.so
 vendor/lib/liburee_meta_drmkeyinstall.so
-vendor/lib/libwvhidl.so
-vendor/lib64/mediadrm/libwvdrmengine.so
+vendor/lib/libwvhidl.so;DISABLE_DEPS
+vendor/lib64/mediadrm/libwvdrmengine.so;DISABLE_DEPS
 vendor/lib64/libtlcWidevineModularDrm.so
 vendor/lib64/liburee_meta_drmkeyinstall.so
-vendor/lib64/libwvhidl.so
+vendor/lib64/libwvhidl.so;DISABLE_DEPS
 
 # DMC
 vendor/bin/dmc_core
@@ -1160,7 +1131,7 @@ vendor/lib64/vendor.mediatek.hardware.dmc@1.2.so
 # Display
 vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
 vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
--vendor/etc/vintf/manifest/manifest_hwcomposer.xml
+vendor/etc/vintf/manifest/manifest_hwcomposer.xml
 vendor/lib/hw/mt6893/android.hardware.graphics.allocator@4.0-impl-mediatek.so;SYMLINK=vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib/hw/mt6893/android.hardware.graphics.mapper@4.0-impl-mediatek.so;SYMLINK=vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib/mt6893/arm.graphics-V1-ndk_platform.so;SYMLINK=vendor/lib/arm.graphics-V1-ndk_platform.so
@@ -1246,15 +1217,15 @@ vendor/firmware/soc3_0_ram_wmmcu_1a_1_hdr.bin
 vendor/firmware/valhall-1691526.wa
 
 # EngineerMode
-lib/libem_support_jni.so
-lib64/libem_support_jni.so
+system/lib/libem_support_jni.so
+system/lib64/libem_support_jni.so
 vendor/lib64/vendor.mediatek.hardware.engineermode@1.0.so
 vendor/lib64/vendor.mediatek.hardware.engineermode@1.1.so
 vendor/lib64/vendor.mediatek.hardware.engineermode@1.2.so
 vendor/lib64/vendor.mediatek.hardware.engineermode@1.3.so
 
 # Pin patched activity exported engineer mode
--priv-app/EngineerMode/EngineerMode.apk|9c90462d8caf098ce923bb947a58e49ca13be579
+system/priv-app/EngineerMode/EngineerMode.apk
 
 # Extra
 odm/lib/libosensehalclient.so
@@ -1267,7 +1238,7 @@ vendor/lib64/libnxp_extamp_intf.so
 # Fingerprint
 odm/bin/hw/vendor.oplus.hardware.biometrics.fingerprint@2.1-service
 odm/etc/init/vendor.oplus.hardware.biometrics.fingerprint@2.1-service.rc
--odm/etc/vintf/manifest/manifest_oplus_fingerprint.xml
+odm/etc/vintf/manifest/manifest_oplus_fingerprint.xml
 odm/lib64/hw/fingerprint.focaltech.default.so
 odm/lib64/hw/fingerprint.goodix_G2.default.so
 odm/lib64/hw/fingerprint.goodix_G3.default.so
@@ -1349,7 +1320,7 @@ vendor/etc/smartpa_param/tfa98xx_ringtone.bin
 vendor/etc/smartpa_param/tfa98xx_voice.bin
 
 # GPS
-vendor/bin/mtk_agpsd
+vendor/bin/mtk_agpsd;DISABLE_DEPS
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_US.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_CT.xml
@@ -1397,13 +1368,13 @@ vendor/lib64/egl/libMEOW_trace.so
 vendor/lib64/libOpenCL.so
 
 # Hotstar - from denniz DN2101_11_F.50
-odm/lib/libwvhdcpext.so|362e59249d2c71f18a9638220a99c23ede2ad0d1
-odm/lib64/libwvhdcpext.so|96858d43c8a786b25b9da193602edfa99bda15f6
+odm/lib/libwvhdcpext.so|362e59249d2c71f18a9638220a99c23ede2ad0d1;DISABLE_DEPS
+odm/lib64/libwvhdcpext.so|96858d43c8a786b25b9da193602edfa99bda15f6;DISABLE_DEPS
 
 # Hotword Enrollment - from mt6893
--system_ext/framework/com.android.hotwordenrollment.common.util.jar|5ea17315d96f9320e487450ff5812ea7641df2dc
--product/priv-app/HotwordEnrollmentOKGoogleRISCV/HotwordEnrollmentOKGoogleRISCV.apk|29f366971d42b0793e8b62d20f259fe6afda0c2e
--product/priv-app/HotwordEnrollmentXGoogleRISCV/HotwordEnrollmentXGoogleRISCV.apk|951d6f43b5965d6d52609dc60c0cb811d5beb93f
+system_ext/framework/com.android.hotwordenrollment.common.util.jar|5ea17315d96f9320e487450ff5812ea7641df2dc
+product/priv-app/HotwordEnrollmentOKGoogleRISCV/HotwordEnrollmentOKGoogleRISCV.apk|29f366971d42b0793e8b62d20f259fe6afda0c2e
+product/priv-app/HotwordEnrollmentXGoogleRISCV/HotwordEnrollmentXGoogleRISCV.apk|951d6f43b5965d6d52609dc60c0cb811d5beb93f
 
 # MMAgent
 vendor/bin/hw/vendor.mediatek.hardware.mmagent@1.1-service
@@ -1420,7 +1391,7 @@ vendor/bin/rcs_volte_stack
 vendor/bin/volte_clientapi_ua
 vendor/bin/volte_rcs_ua
 vendor/etc/init/volte_clientapi_ua.rc
--vendor/etc/vintf/manifest/lbs_hidl_service@1.0.xml
+vendor/etc/vintf/manifest/lbs_hidl_service@1.0.xml
 vendor/lib/libipsec_ims_shr.so
 vendor/lib/librcs_interface.so
 vendor/lib/librcs_volte_core.so
@@ -1452,29 +1423,29 @@ vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
 
 # Libraries
-etc/public.libraries-mtk.txt
-etc/public.libraries-trustonic.txt
+system/etc/public.libraries-mtk.txt
+system/etc/public.libraries-trustonic.txt
 
 # Listen
 vendor/lib/hw/sound_trigger.primary.default.so
 
 # Media
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
-vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
+vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b;DISABLE_DEPS
 vendor/bin/jpegtool
 vendor/bin/recordevent
 vendor/bin/replayevent
 vendor/bin/vpud
 vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc
 vendor/etc/init/vpud.rc
--vendor/etc/vintf/manifest/manifest_media_c2_V1_1_default.xml
+vendor/etc/vintf/manifest/manifest_media_c2_V1_1_default.xml
 vendor/etc/mpe.conf
 vendor/lib/AV1SecureVdecCA.so
 vendor/lib/AVCSecureVdecCA.so
 vendor/lib/HEVCSecureVdecCA.so
 vendor/lib/VP9SecureVdecCA.so
 vendor/lib/libadpcmdec_mtk.so
-vendor/lib/libHEVCdec_sa.ca7.android.so
+vendor/lib/libHEVCdec_sa.ca7.android.so;DISABLE_DEPS
 vendor/lib/libJpgEncPipe.so
 vendor/lib/libcodec2_mtk_c2store.so
 vendor/lib/libcodec2_mtk_vdec.so
@@ -1482,31 +1453,27 @@ vendor/lib/libcodec2_mtk_venc.so
 vendor/lib/libcodec2_soft_mtk_alacdec.so
 vendor/lib/libcodec2_soft_mtk_apedec.so
 vendor/lib/libcodec2_soft_mtk_imaadpcmdec.so
-vendor/lib/libcodec2_soft_mtk_mp3dec.so
+vendor/lib/libcodec2_soft_mtk_mp3dec.so;DISABLE_DEPS
 vendor/lib/libcodec2_soft_mtk_msadpcmdec.so
 vendor/lib/libcodec2_soft_mtk_wmadec.so
 vendor/lib/libcodec2_vpp_qt_plugin.so
 vendor/lib/libcodec2_vpp_rs_plugin.so
 vendor/lib/libh264dec_customize.so
-vendor/lib/libh264dec_sa.ca7.so
-vendor/lib/libh264dec_sd.ca7.so
-vendor/lib/libh264dec_se.ca7.so
-vendor/lib/libh264enc_sa.ca7.so
+vendor/lib/libh264dec_sa.ca7.so;DISABLE_DEPS
+vendor/lib/libh264dec_sd.ca7.so;DISABLE_DEPS
+vendor/lib/libh264dec_se.ca7.so;DISABLE_DEPS
+vendor/lib/libh264enc_sa.ca7.so;DISABLE_DEPS
 vendor/lib/libhdrvideo.so
 vendor/lib/libheichal.so
-vendor/lib/libhevce_sb.ca7.android.so
+vendor/lib/libhevce_sb.ca7.android.so;DISABLE_DEPS
 vendor/lib/libhfmanager.so
 vendor/lib/libhfmanagerwrapper.so
 vendor/lib/libhwconfigurationutil.so
 vendor/lib/libicd_decoder.so
 vendor/lib/libimagebuffer_wrapper.so
-vendor/lib/libimageio.so
-vendor/lib/libimageio_plat_drv.so
-vendor/lib/libimageio_plat_pipe.so
 vendor/lib/libimgsensorca.so
 vendor/lib/libjpeg-alpha-oal_vendor.so
 vendor/lib/libjpeg-alpha_vendor.so
-vendor/lib/libmfllcore.so
 vendor/lib/libthha.so
 vendor/lib/libmmprofile.so
 vendor/lib/libmp4enc_sa.ca7.so
@@ -1515,9 +1482,9 @@ vendor/lib/libvcodec_oal.so
 vendor/lib/libvcodec_utility.so
 vendor/lib/libvcodecdrv.so
 vendor/lib/libvcodecdrv_header_stub.so
-vendor/lib/libvp8dec_sa.ca7.so
-vendor/lib/libvp8enc_sa.ca7.so
-vendor/lib/libvp9dec_sa.ca7.so
+vendor/lib/libvp8dec_sa.ca7.so;DISABLE_DEPS
+vendor/lib/libvp8enc_sa.ca7.so;DISABLE_DEPS
+vendor/lib/libvp9dec_sa.ca7.so;DISABLE_DEPS
 vendor/lib/libvpu.so
 vendor/lib/libvpu5.so
 vendor/lib/libvpud_vcodec.so
@@ -1548,6 +1515,7 @@ vendor/lib64/libjpeg-alpha-oal_vendor.so
 vendor/lib64/libjpeg-alpha_vendor.so
 vendor/lib64/libmfllcore.so
 vendor/lib64/libmmprofile.so
+vendor/lib64/libmtkmipc-ril.so
 vendor/lib64/libthha.so
 vendor/lib64/libvcodec_oal.so
 vendor/lib64/libvcodecdrv_header_stub.so
@@ -1557,9 +1525,6 @@ vendor/lib64/libviamipc-ril.so
 vendor/lib64/libwpfa.so
 vendor/lib64/libvpu.so
 vendor/lib64/libvpu5.so
-
-# Mtkfusionrild - from c.12 RMX3031-user 12 SP1A.210812.016 1663769087038 release-keys
-vendor/bin/hw/mtkfusionrild|a026e560f5af92f8a9a2eb2159394e54e4a55bec
 
 # Misc
 vendor/etc/slp_conf
@@ -1605,7 +1570,6 @@ vendor/lib/audio_common-aidl-cpp.so
 vendor/lib/libAVCSecureVencCA.so
 vendor/lib/libaaa_ltm.so
 vendor/lib/libaaa_ltmx.so
-vendor/lib/libainrcore.so
 vendor/lib/libaispq.so
 vendor/lib/libcustomer_testvision.so
 vendor/lib/libmidasserviceintf.so
@@ -1688,7 +1652,7 @@ vendor/etc/xgf.cfg
 # Neural-networks
 vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron
 vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc
--vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-mtk-mdla-dsp-gpu.xml
+vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-mtk-mdla-dsp-gpu.xml
 vendor/lib/mt6893/libneuron_platform.vpu.so;SYMLINK=vendor/lib/libneuron_platform.vpu.so
 vendor/lib/libcmdl.so
 vendor/lib/libcmdl_ndk.mtk.vndk.so
@@ -1762,7 +1726,6 @@ odm/lib64/libolc_vnd.so
 odm/lib/vendor.oplus.hardware.orms@1.0.so
 odm/lib64/vendor.oplus.hardware.orms@1.0.so
 odm/lib64/libormshalclient.so
-vendor/lib/liboppo_arcSoftBokehEngine.so
 vendor/lib64/liboppo_arcSoftBokehEngine.so
 
 # Power
@@ -1811,7 +1774,7 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.9.so
 
 # Radio (ATCI)
 vendor/bin/atci_service
-vendor/bin/atcid
+vendor/bin/atcid;DISABLE_DEPS
 vendor/bin/audiocmdservice_atci
 vendor/etc/init/atcid.rc
 vendor/etc/init/audiocmdservice_atci.rc
@@ -1829,8 +1792,9 @@ vendor/bin/ccci_mdinit
 vendor/bin/ccci_rpcd
 vendor/bin/doeapp-sat
 vendor/bin/dtc_vendor
-vendor/bin/factory
+vendor/bin/factory;DISABLE_DEPS
 vendor/bin/gsm0710muxd
+vendor/bin/hw/mtkfusionrild
 vendor/bin/md_monitor
 vendor/bin/md_monitor_ctrl
 vendor/bin/mnld
@@ -1857,15 +1821,13 @@ vendor/lib/libcvsd_mtk.so
 vendor/lib/libdynamiclog.so
 vendor/lib/liblpcnr.so
 vendor/lib/libmsbc_mtk.so
-vendor/lib/libmsnr.so
 vendor/lib/libmtcloader.so
 vendor/lib/libpkm.so
 vendor/lib/libsimlock.so
 vendor/lib/libsimmelock.so
 vendor/lib/libsysenv.so
-vendor/lib/libtranslator_mapi_v3.0.so
-vendor/lib/libtranslator_mdmi_v2.8.2.so
-vendor/lib/libtranslator_utils.so
+vendor/lib/libtranslator_mdmi_v2.8.2.so;DISABLE_DEPS
+vendor/lib/libtranslator_utils.so;DISABLE_DEPS
 vendor/lib/vendor.mediatek.hardware.rcs@2.0.so
 vendor/lib64/libappgamepq.so
 vendor/lib64/libcapctrl.so
@@ -1890,8 +1852,8 @@ vendor/lib64/libsimmelock.so
 vendor/lib64/libstorage_otp.so
 vendor/lib64/libsysenv.so
 vendor/lib64/libtranslator_mapi_v3.0.so
-vendor/lib64/libtranslator_mdmi_v2.8.2.so
-vendor/lib64/libtranslator_utils.so
+vendor/lib64/libtranslator_mdmi_v2.8.2.so;DISABLE_DEPS
+vendor/lib64/libtranslator_utils.so;DISABLE_DEPS
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 vendor/lib64/vendor.oplus.hardware.radio-V1-ndk_platform.so;MODULE_SUFFIX=_vendor
@@ -1904,7 +1866,7 @@ vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
 odm/bin/hw/vendor.oplus.hardware.oplusSensor@1.0-service
 odm/etc/init/vendor.oplus.hardware.oplusSensor@1.0-service.rc
 odm/etc/sensor/sensor_config.json
--odm/etc/vintf/manifest/manifest_oplusSensor.xml
+odm/etc/vintf/manifest/manifest_oplusSensor.xml
 odm/lib/vendor.oplus.hardware.oplusSensor@1.0.so
 odm/lib64/vendor.oplus.hardware.oplusSensor@1.0.so
 odm/lib64/oplus.sensors.ssc.so
@@ -2028,4 +1990,4 @@ vendor/lib64/libapmonitor_vendor.so
 vendor/lib64/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib64/vendor.mediatek.hardware.mdmonitor@1.0.so
 vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
--vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml
+vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml
