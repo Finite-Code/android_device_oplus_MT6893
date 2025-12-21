@@ -13,6 +13,14 @@ from extract_utils.fixups_blob import (
     blob_fixups_user_type,
 )
 
+namespace_imports = [
+    'device/oplus/MT6893',
+    'hardware/google/interfaces',
+    'hardware/google/pixel',
+    'hardware/mediatek',
+    'hardware/mediatek/libmtkperf_client',
+]
+
 blob_fixups: blob_fixups_user_type = {
     'vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service': blob_fixup()
         .replace_needed('libutils.so', 'libutils_v32.so')
@@ -69,6 +77,7 @@ blob_fixups: blob_fixups_user_type = {
 module = ExtractUtilsModule(
     'MT6893',
     'oplus',
+    namespace_imports=namespace_imports,
     blob_fixups=blob_fixups,
 )
 
