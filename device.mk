@@ -444,7 +444,6 @@ PRODUCT_COPY_FILES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.0-service-multihal.MT6893 \
-    als_correction_service.MT6893 \
     android.hardware.sensors@1.0.vendor \
     android.hardware.sensors@2.0.vendor \
     android.hardware.sensors@2.1.vendor \

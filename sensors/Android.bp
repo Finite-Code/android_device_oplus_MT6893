@@ -21,7 +21,6 @@ cc_binary {
     vendor: true,
     relative_install_path: "hw",
     srcs: [
-	"AlsCorrection.cpp",
         "HalProxy.cpp",
         "HalProxyCallback.cpp",
         "service.cpp",
@@ -53,20 +52,3 @@ cc_binary {
     local_include_dirs: [ "include",],
 }
 
-cc_binary { 
-	name: "als_correction_service.MT6893",
-	stem: "als_correction_service", 
-	init_rc: ["als_correction_service.rc"], 
-	system_ext_specific: true, 
-	srcs: ["als_correction_service.cpp", ], 
-	shared_libs: [ 
-		"libbase", 
-		"libbinder", 
-		"libgui", 
-		"libui", 
-		"libsysutils",
-	        "libutils", 
-		"liblog",
-	], cflags: [ "-DNO_INPUT", ], 
-	local_include_dirs: [ "include",],
-}
