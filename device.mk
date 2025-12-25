@@ -444,6 +444,7 @@ PRODUCT_COPY_FILES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal \
+    sensors.oplus \
     android.frameworks.sensorservice@1.0.vendor \
     libsensorndkbridge \
     libpower.vendor
