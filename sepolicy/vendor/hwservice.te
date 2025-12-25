@@ -18,3 +18,6 @@ type hal_osense_oplus_hwservice, hwservice_manager_type;
 
 # Performance
 type hal_performance_oplus_hwservice, hwservice_manager_type;
+
+# Sensors
+type vendor_hal_oplus_sensor_hwservice, hwservice_manager_type, protected_hwservice;

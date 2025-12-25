@@ -19,3 +19,6 @@ ro.vendor.mtk_hdr_video_support                                 u:object_r:vendo
 
 # PowerHAL
 vendor.powerhal.rendering                                       u:object_r:vendor_power_prop:s0
+
+# Sensors
+ro.vendor.oplus.sensor.                                         u:object_r:vendor_sensors_prop:s0

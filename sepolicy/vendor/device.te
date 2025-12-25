@@ -7,3 +7,4 @@ type oplus_display_device, dev_type;
 # Sensors
 type virtual_sensor_device, dev_type;
 type oplus_block_device, dev_type;
+type vendor_reserve_partition, dev_type;
