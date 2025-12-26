@@ -1,5 +1,5 @@
-# Camera
-genfscon proc /boost_pool                                                                   u:object_r:proc_boost_pool:s0
+# Alert Slider
+genfscon proc /tristatekey                                                                  u:object_r:vendor_proc_tri_state_key:s0
 
 # Charging
 genfscon sysfs /devices/platform/charger/power_supply/ac                                    u:object_r:vendor_sysfs_ac_supply:s0
@@ -20,6 +20,9 @@ genfscon sysfs /devices/virtual/oplus_chg                                       
 genfscon sysfs /devices/platform/extcon_usb/extcon                                          u:object_r:sysfs_extcon:s0
 genfscon sysfs /devices/system/cpu/cpufreq/mtk/.cluster_(min|max)_freq                      u:object_r:sysfs_mtk_cpufreq:s0
 genfscon sysfs /kernel/gpu/gpu_(min|max)_clock                                              u:object_r:sysfs_mtk_gpufreq:s0
+
+# Camera
+genfscon proc /boost_pool                                                                   u:object_r:proc_boost_pool:s0
 
 # Display
 genfscon proc /devinfo/lcd                                                                  u:object_r:vendor_proc_display:s0
@@ -44,22 +47,48 @@ genfscon proc /oplus_nfc/chipset                                                
 # OTG
 genfscon sysfs /devices/virtual/oplus_chg/usb/otg_switch                                    u:object_r:vendor_sysfs_otg_switch:s0
 
+# Performance
+genfscon proc /sys/kernel/sched_stune_task_threshold                                        u:object_r:proc_sched_stune:s0 
+genfscon proc /sys/kernel/sched_assist_enabled                                              u:object_r:proc_sched_assist:s0
+genfscon proc /sys/kernel/sched_assist_scene                                                u:object_r:proc_sched_assist:s0
+
 # Sensors
 genfscon proc /oplusSensorFeature                                                           u:object_r:vendor_proc_oplus_sensor_feature:s0
 genfscon proc /oplusCustom/Sensor                                                           u:object_r:vendor_proc_oplus_sensor_feature:s0
 genfscon proc /mag_soft_parameter.json                                                      u:object_r:vendor_proc_oplus_sensor_param:s0
-genfscon proc /sensor/als_cali                                                              u:object_r:vendor_proc_oplus_sensor_cali:s0
+genfscon proc /sensor/als_cali                                                              u:object_r:vendor_proc_oplus_als_file:s0
 genfscon sysfs /devices/virtual/oplus_sensor                                                u:object_r:vendor_sysfs_oplus_virtual_sensor:s0
 genfscon sysfs /class/oplus_sensor                                                          u:object_r:vendor_sysfs_oplus_virtual_sensor:s0
+
+# Swap
+genfscon proc /sys/vm/direct_swappiness                                                     u:object_r:proc_swappiness:s0
+
+# TEE
+genfscon proc /tee_bind_core                                                                u:object_r:vendor_proc_fingerprint:s0
 
 # Versioning
 genfscon proc /oplusVersion                                                                 u:object_r:vendor_proc_oplus_version:s0
 genfscon proc /oplusVersion/prjName                                                         u:object_r:prjname_file:s0
 
-# Performance
-genfscon proc /sys/kernel/sched_stune_task_threshold                                        u:object_r:proc_sched_stune:s0 
-genfscon proc /sys/kernel/sched_assist_enabled                                              u:object_r:proc_sched_assist:s0
-genfscon proc /sys/kernel/sched_assist_scene                                                u:object_r:proc_sched_assist:s0
+# Vibrator - cupida
+genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-005a/leds/vibrator/duration          u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-005a/leds/vibrator/trigger           u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-005a/leds/vibrator/state             u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-005a/leds/vibrator/activate          u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-005a/leds/vibrator/vmax              u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-005a/leds/vibrator/brightness        u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-005a/leds/vibrator/seq               u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-005a/leds/vibrator/loop              u:object_r:sysfs_vibrator:s0
+
+# Vibrator - denniz
+genfscon sysfs /devices/platform/11cb1000.i2c9/i2c-9/9-005a/leds/vibrator/duration          u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/11cb1000.i2c9/i2c-9/9-005a/leds/vibrator/trigger           u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/11cb1000.i2c9/i2c-9/9-005a/leds/vibrator/state             u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/11cb1000.i2c9/i2c-9/9-005a/leds/vibrator/activate          u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/11cb1000.i2c9/i2c-9/9-005a/leds/vibrator/vmax              u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/11cb1000.i2c9/i2c-9/9-005a/leds/vibrator/brightness        u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/11cb1000.i2c9/i2c-9/9-005a/leds/vibrator/seq               u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/11cb1000.i2c9/i2c-9/9-005a/leds/vibrator/loop              u:object_r:sysfs_vibrator:s0
 
 # Wakeup
 genfscon sysfs /devices/platform/usb0/wakeup/wakeup124                                      u:object_r:sysfs_wakeup:s0
@@ -85,32 +114,3 @@ genfscon sysfs /devices/platform/10800000.adsp_core0/wakeup/wakeup13            
 genfscon sysfs /devices/platform/15020000.imgsys_config/wakeup/wakeup111                    u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/11015000.i2c0/i2c-0/0-0038/wakeup/wakeup176                u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/odm/odm:oplus,track-charge/track/wakeup/wakeup146          u:object_r:sysfs_wakeup:s0
-
-# Vibrator - denniz
-genfscon sysfs /devices/platform/11cb1000.i2c9/i2c-9/9-005a/leds/vibrator/duration          u:object_r:sysfs_vibrator:s0
-genfscon sysfs /devices/platform/11cb1000.i2c9/i2c-9/9-005a/leds/vibrator/trigger           u:object_r:sysfs_vibrator:s0
-genfscon sysfs /devices/platform/11cb1000.i2c9/i2c-9/9-005a/leds/vibrator/state             u:object_r:sysfs_vibrator:s0
-genfscon sysfs /devices/platform/11cb1000.i2c9/i2c-9/9-005a/leds/vibrator/activate          u:object_r:sysfs_vibrator:s0
-genfscon sysfs /devices/platform/11cb1000.i2c9/i2c-9/9-005a/leds/vibrator/vmax              u:object_r:sysfs_vibrator:s0
-genfscon sysfs /devices/platform/11cb1000.i2c9/i2c-9/9-005a/leds/vibrator/brightness        u:object_r:sysfs_vibrator:s0
-genfscon sysfs /devices/platform/11cb1000.i2c9/i2c-9/9-005a/leds/vibrator/seq               u:object_r:sysfs_vibrator:s0
-genfscon sysfs /devices/platform/11cb1000.i2c9/i2c-9/9-005a/leds/vibrator/loop              u:object_r:sysfs_vibrator:s0
-
-# Vibrator - cupida
-genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-005a/leds/vibrator/duration          u:object_r:sysfs_vibrator:s0
-genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-005a/leds/vibrator/trigger           u:object_r:sysfs_vibrator:s0
-genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-005a/leds/vibrator/state             u:object_r:sysfs_vibrator:s0
-genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-005a/leds/vibrator/activate          u:object_r:sysfs_vibrator:s0
-genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-005a/leds/vibrator/vmax              u:object_r:sysfs_vibrator:s0
-genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-005a/leds/vibrator/brightness        u:object_r:sysfs_vibrator:s0
-genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-005a/leds/vibrator/seq               u:object_r:sysfs_vibrator:s0
-genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-005a/leds/vibrator/loop              u:object_r:sysfs_vibrator:s0
-
-# Swap
-genfscon proc /sys/vm/direct_swappiness                                                     u:object_r:proc_swappiness:s0
-
-# TEE
-genfscon proc /tee_bind_core                                                                u:object_r:vendor_proc_fingerprint:s0
-
-# Alert Slider
-genfscon proc /tristatekey                                                                  u:object_r:vendor_proc_tri_state_key:s0

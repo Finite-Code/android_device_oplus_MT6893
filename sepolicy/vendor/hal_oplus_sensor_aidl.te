@@ -15,5 +15,5 @@ allow hal_oplus_sensor_aidl vendor_reserve_partition:blk_file r_file_perms;
 
 allow hal_oplus_sensor_aidl mnt_vendor_file:dir search;
 
-r_dir_file(hal_oplus_sensor_aidl, persist_engineer_file)
-rw_dir_file(hal_oplus_sensor_aidl, vendor_proc_oplus_sensor_als)
+r_dir_file(hal_oplus_sensor_aidl, vendor_persist_engineer_file)
+rw_dir_file(hal_oplus_sensor_aidl, vendor_proc_oplus_als_file)

@@ -1,8 +1,11 @@
+# Alert Slider
+type vendor_proc_tri_state_key, fs_type, proc_type;
+
 # Camera
 type vendor_proc_flash, fs_type, proc_type;
 type proc_boost_pool, fs_type, proc_type;
 type vendor_camera_update_data_file, file_type, data_file_type;
-type persist_camera_file, file_type;
+type vendor_persist_camera_file, file_type;
 type prjname_file, fs_type, vendor_file_type, proc_type;
 
 # Charging
@@ -21,8 +24,8 @@ type vendor_firmware_file, vendor_file_type, file_type;
 type vendor_sysfs_graphics, fs_type, sysfs_type;
 type vendor_proc_display, fs_type, proc_type;
 
-# Firmware
-type odm_fw_file, file_type, data_file_type;
+# Engineering
+type vendor_proc_engineer, fs_type, proc_type;
 
 # Fingerprint
 type factorytestreport_vendor_data_file, data_file_type, file_type;
@@ -30,13 +33,16 @@ type oplus_fingerprint_file, data_file_type, file_type;
 type proc_fingerprint, fs_type, proc_type;
 type vendor_proc_fingerprint, fs_type, proc_type;
 
+# Firmware
+type odm_fw_file, file_type, data_file_type;
+
+# GPU
+type vendor_sysfs_gpu, fs_type, sysfs_type;
+
 # Latency
 type latency_device, dev_type;
 type sysfs_mtk_cpufreq, fs_type, sysfs_type;
 type sysfs_mtk_gpufreq, fs_type, sysfs_type;
-
-# PPS
-type pps_socket, file_type;
 
 # NFC
 type vendor_proc_nfc_chipset, fs_type, proc_type;
@@ -44,27 +50,18 @@ type vendor_proc_nfc_chipset, fs_type, proc_type;
 # OTG
 type vendor_sysfs_otg_switch, fs_type, sysfs_type;
 
-# Sensors
-type vendor_proc_oplus_sensor_feature, fs_type, proc_type;
-type vendor_proc_oplus_sensor_param, fs_type, proc_type;
-type vendor_sysfs_oplus_virtual_sensor, fs_type, sysfs_type;
-type vendor_proc_oplus_sensor_cali, fs_type, proc_type;
-type vendor_proc_oplus_sensor_als, fs_type, proc_type;
-type oplus_sensor_file, data_file_type, file_type;
-
-# Engineering
-type vendor_persist_engineer_file, file_type;
-type vendor_proc_engineer, fs_type, proc_type;
-
-# Versioning
-type vendor_proc_oplus_version, fs_type, proc_type;
+# PPS
+type pps_socket, file_type;
 
 # Performance
 type proc_sched_stune, fs_type, proc_type;
 type proc_sched_assist, fs_type, proc_type;
 
-# GPU
-type vendor_sysfs_gpu, fs_type, sysfs_type;
+# Sensors
+type vendor_proc_oplus_sensor_feature, fs_type, proc_type;
+type vendor_proc_oplus_sensor_param, fs_type, proc_type;
+type vendor_sysfs_oplus_virtual_sensor, fs_type, sysfs_type;
+type vendor_proc_oplus_als_file, fs_type, proc_type;
 
-# Alert Slider
-type vendor_proc_tri_state_key, fs_type, proc_type;
+# Versioning
+type vendor_proc_oplus_version, fs_type, proc_type;

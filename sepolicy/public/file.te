@@ -1,2 +1,5 @@
+# Engineering
+type vendor_persist_engineer_file, file_type;
+
 # System Suspend
 type vendor_sysfs_usb_supply, fs_type, sysfs_type;
