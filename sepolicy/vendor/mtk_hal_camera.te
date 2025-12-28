@@ -11,8 +11,8 @@ r_dir_file(mtk_hal_camera, vendor_proc_oplus_version)
 
 set_prop(mtk_hal_camera, vendor_oplus_prop)
 
-allow mtk_hal_camera vendor_persist_camera_file:dir rw_dir_perms;
-allow mtk_hal_camera vendor_persist_camera_file:file create_file_perms;
+allow mtk_hal_camera persist_camera_file:dir rw_dir_perms;
+allow mtk_hal_camera persist_camera_file:file create_file_perms;
 allow mtk_hal_camera vendor_camera_update_data_file:dir rw_dir_perms;
 allow mtk_hal_camera vendor_camera_update_data_file:file create_file_perms;
 allow mtk_hal_camera persist_data_file:dir r_dir_perms;

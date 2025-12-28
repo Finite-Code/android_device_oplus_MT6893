@@ -5,7 +5,7 @@ type vendor_proc_tri_state_key, fs_type, proc_type;
 type vendor_proc_flash, fs_type, proc_type;
 type proc_boost_pool, fs_type, proc_type;
 type vendor_camera_update_data_file, file_type, data_file_type;
-type vendor_persist_camera_file, file_type;
+type persist_camera_file, file_type;
 type prjname_file, fs_type, vendor_file_type, proc_type;
 
 # Charging

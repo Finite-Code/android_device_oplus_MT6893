@@ -6,7 +6,7 @@ allow platform_app hal_osense_oplus_hwservice:hwservice_manager find;
 binder_call(platform_app, mtk_hal_camera)
 binder_call(platform_app, hal_performance_oplus)
 
-r_dir_file(platform_app, vendor_persist_camera_file)
+r_dir_file(platform_app, persist_camera_file)
 r_dir_file(platform_app, persist_data_file)
 r_dir_file(platform_app, shell_data_file)
 
