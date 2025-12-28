@@ -35,6 +35,14 @@ vendor/lib64/vendor.mediatek.hardware.apuware.apusys@2.1.so
 vendor/lib64/vendor.mediatek.hardware.apuware.hmp@1.0.so
 vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
 vendor/lib64/vendor.mediatek.hardware.apuware.xrp@2.0.so
+system/etc/permissions/APU_SYS.xml
+system_ext/lib64/libapuwareapusys.mtk.so;DISABLE_DEPS
+system_ext/lib64/libapuwareapusys_v2.mtk.so;DISABLE_DEPS
+system_ext/lib64/libapuwarehmp.mtk.so
+system_ext/lib64/libapuwareutils.mtk.so;DISABLE_DEPS
+system_ext/lib64/libapuwareutils_v2.mtk.so
+system_ext/lib64/libapuwarexrp.mtk.so;DISABLE_DEPS
+system_ext/lib64/libapuwarexrp_v2.mtk.so
 
 # Audio
 odm/bin/hw/vendor.oplus.hardware.performance@1.0-service
@@ -1678,6 +1686,8 @@ vendor/lib64/libneuron_platform.so
 vendor/lib64/libneuron_wrapper.so
 vendor/lib64/libneuropilot_hal_utils.so
 vendor/lib64/libtflite_mtk.so
+system_ext/lib64/libneuron_graph_delegate.mtk.so;MODULE_SUFFIX=_system
+system_ext/lib64/libneuronusdk_adapter.mtk.so
 
 # NFC
 odm/etc/init/init.SN100x.nfc.rc
