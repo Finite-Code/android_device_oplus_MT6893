@@ -186,20 +186,6 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     libgatekeeper.vendor
 
-# GNSS
-PRODUCT_PACKAGES += \
-    android.hardware.gnss.measurement_corrections@1.0.vendor \
-    android.hardware.gnss.measurement_corrections@1.1.vendor \
-    android.hardware.gnss.visibility_control@1.0.vendor \
-    android.hardware.gnss@1.0.vendor:64 \
-    android.hardware.gnss@1.1.vendor:64 \
-    android.hardware.gnss@2.0.vendor:64 \
-    android.hardware.gnss@2.1.vendor:64 \
-    libcurl.vendor
-
-PRODUCT_PACKAGES += \
-    android.hardware.gnss-service.mediatek
-
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.safe_union@1.0.vendor \
