@@ -105,7 +105,7 @@ vendor/lib/libvow_ap_test_nn.so
 vendor/lib/vendor.mediatek.hardware.audio@6.1.so
 vendor/lib/vendor.mediatek.hardware.audio@7.1.so
 vendor/lib/vendor.oplus.hardware.performance@1.0.so
-vendor/lib/libalsautils.so:vendor/lib/libalsautils-v31.so
+vendor/lib/libalsautils.so:vendor/lib/libalsautils-v31.so;FIX_SONAME
 vendor/lib64/hw/android.hardware.audio@6.0-impl-mediatek.so
 vendor/lib64/hw/android.hardware.audio@7.0-impl-mediatek.so
 vendor/lib64/hw/audio.primary.mt6893.so
@@ -146,7 +146,7 @@ vendor/lib64/libspeechparser_vendor.so
 vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
 vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
 vendor/lib64/vendor.oplus.hardware.performance@1.0.so
-vendor/lib64/libalsautils.so:vendor/lib64/libalsautils-v31.so
+vendor/lib64/libalsautils.so:vendor/lib64/libalsautils-v31.so;FIX_SONAME
 
 # Audio-configs
 odm/etc/audio/audio_device/common/audio_device.xml
@@ -816,7 +816,7 @@ odm/lib64/libremosaic_wrapper.so
 odm/lib64/libremosaiclib.so
 odm/lib64/libtfavib.so
 odm/lib64/libtflite_mtk_static.so
-odm/lib64/libui.so:odm/lib64/libui_oplus.so;DISABLE_DEPS
+odm/lib64/libui.so:odm/lib64/libui_oplus.so;DISABLE_DEPS;FIX_SONAME
 odm/lib64/libwatermark_photo.so
 odm/lib64/ov02b10_mipi_raw_20615_tuning.so
 odm/lib64/vendor.oplus.hardware.cammidasservice@1.0.so;MODULE_SUFFIX=_odm
@@ -1881,12 +1881,12 @@ odm/lib/vendor.oplus.hardware.oplusSensor@1.0.so
 odm/lib64/vendor.oplus.hardware.oplusSensor@1.0.so
 odm/lib64/oplus.sensors.ssc.so
 vendor/lib/libSensorSave.so
-vendor/lib/libsensorndkbridge.so:vendor/lib/libsensorndkbridge-v30.so
+vendor/lib/libsensorndkbridge.so:vendor/lib/libsensorndkbridge-v30.so;FIX_SONAME
 vendor/lib/librgbwlightsensor.so
 vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
 vendor/lib64/hw/sensors.mt6893.so
 vendor/lib64/libSensorSave.so
-vendor/lib64/libsensorndkbridge.so:vendor/lib64/libsensorndkbridge-v30.so
+vendor/lib64/libsensorndkbridge.so:vendor/lib64/libsensorndkbridge-v30.so;FIX_SONAME
 vendor/lib64/libhwm-oplus.so
 vendor/lib64/libhwm.so
 vendor/lib64/libksensor.so
@@ -1975,7 +1975,7 @@ vendor/lib/hw/thermal_hal.so
 vendor/lib64/hw/thermal_hal.so
 
 # Vndk
-vendor/lib64/libutils.so:vendor/lib64/libutils_v32.so
+vendor/lib64/libutils.so:vendor/lib64/libutils_v32.so;FIX_SONAME
 
 # WiFi
 odm/etc/wifi/txpowerctrl.cfg
@@ -1995,7 +1995,7 @@ vendor/lib/libapmonitor_vendor.so
 vendor/lib/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib/vendor.mediatek.hardware.mdmonitor@1.0.so
 vendor/lib/vendor.mediatek.hardware.netdagent@1.0.so
-vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so
+vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so;FIX_SONAME
 vendor/lib64/libapmonitor_vendor.so
 vendor/lib64/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib64/vendor.mediatek.hardware.mdmonitor@1.0.so
