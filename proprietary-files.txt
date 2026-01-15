@@ -52,14 +52,14 @@ odm/firmware/awinic_haptic_gun_params.bin
 odm/firmware/awinic_haptic_params.bin
 odm/framework/vendor.oplus.hardware.performance-V1.0-java.jar
 odm/lib/lib_aurisys_lvimfs.so
-odm/lib/libnxprecord.so
+odm/lib/libnxprecord.so;FIX_SONAME
 odm/lib/libnxpsmartpaparser.so
-odm/lib/libnxpspeech.so
+odm/lib/libnxpspeech.so;FIX_SONAME
 odm/lib/vendor.oplus.hardware.performance@1.0.so;MODULE_SUFFIX=_odm
 odm/lib64/lib_aurisys_lvimfs.so
-odm/lib64/libnxprecord.so
+odm/lib64/libnxprecord.so;FIX_SONAME
 odm/lib64/libnxpsmartpaparser.so
-odm/lib64/libnxpspeech.so
+odm/lib64/libnxpspeech.so;FIX_SONAME
 odm/lib64/vendor.oplus.hardware.performance@1.0.so;MODULE_SUFFIX=_odm
 vendor/bin/mt6660_calibration
 vendor/bin/rt5512_calibration
@@ -95,7 +95,7 @@ vendor/lib/libktvsoundtouch.so
 vendor/lib/libktvvolume.so
 vendor/lib/libminiui.so
 vendor/lib/librt_extamp_intf.so
-vendor/lib/libspeech_enh_lib.so
+vendor/lib/libspeech_enh_lib.so;FIX_SONAME
 vendor/lib/libspeechparser_vendor.so
 vendor/lib/libvow_ap_test_aa.so
 vendor/lib/libvow_ap_test_dd.so
@@ -141,7 +141,7 @@ vendor/lib64/libktvsoundtouch.so
 vendor/lib64/libktvvolume.so
 vendor/lib64/libminiui.so
 vendor/lib64/librt_extamp_intf.so
-vendor/lib64/libspeech_enh_lib.so
+vendor/lib64/libspeech_enh_lib.so;FIX_SONAME
 vendor/lib64/libspeechparser_vendor.so
 vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
 vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
@@ -796,7 +796,7 @@ odm/lib64/libWaterMark.so
 odm/lib64/lib_rectify.so
 odm/lib64/libaiseg.so;DISABLE_DEPS
 odm/lib64/libalCFR.so;DISABLE_DEPS
-odm/lib64/libanc_np-loader.so
+odm/lib64/libanc_np-loader.so;FIX_SONAME
 odm/lib64/libapsexif.so
 odm/lib64/libapsjpeg.so
 odm/lib64/libapspng.so
@@ -1204,7 +1204,7 @@ vendor/lib64/libgralloctypes_mtk.so
 vendor/lib64/libion_mtk.so
 vendor/lib64/libion_ulit.so
 vendor/lib64/libmml.so
-vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so
+vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so;FIX_SONAME
 vendor/lib64/libpixelflinger.so
 vendor/lib64/libpq_cust_base.so
 vendor/lib64/libpqframework.so
@@ -1687,7 +1687,7 @@ vendor/lib64/libneuron_wrapper.so
 vendor/lib64/libneuropilot_hal_utils.so
 vendor/lib64/libtflite_mtk.so
 system_ext/lib64/libneuron_graph_delegate.mtk.so;MODULE_SUFFIX=_system
-system_ext/lib64/libneuronusdk_adapter.mtk.so
+system_ext/lib64/libneuronusdk_adapter.mtk.so;FIX_SONAME
 
 # NFC
 odm/etc/init/init.SN100x.nfc.rc
