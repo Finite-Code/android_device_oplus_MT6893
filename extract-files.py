@@ -54,7 +54,7 @@ blob_fixups: blob_fixups_user_type = {
     ('vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron',
     'vendor/lib*/libnvram.so',
     'odm/bin/hw/vendor.oplus.hardware.charger@1.0-service',
-    'vendor/lib64/libsysenv.so'): blob_fixup()
+    'vendor/lib*/libsysenv.so'): blob_fixup()
         .add_needed('libbase_shim.so'),
     ('vendor/lib64/hw/hwcomposer.mt6893.so', 
     'vendor/lib64/libutils_v32.so'): blob_fixup()
