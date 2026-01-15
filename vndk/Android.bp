@@ -35,7 +35,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-	name: "libbinder_v32",
+	name: "libbinder-v32",
 	strip: {
 		none: true,
 	},
@@ -50,52 +50,19 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-	name: "libhidlbase_v32",
+	name: "libtinyalsa-v32",
 	strip: {
-		none: true,
+			none: true,
 	},
 	target: {
-		android_arm64: {
-			srcs: ["libhidlbase-v32.so"],
-		},
+			android_arm: {
+					srcs: ["arm/libtinyalsa-v32.so"],
+			},
+			android_arm64: {
+					srcs: ["arm64/libtinyalsa-v32.so"],
+			},
 	},
-	compile_multilib: "64",
+	compile_multilib: "both",
 	check_elf_files: false,
 	vendor: true,
-}
-
-cc_prebuilt_library_shared {
-        name: "libstagefright_foundation_v33",
-        strip: {
-                none: true,
-        },
-        target: {
-                android_arm: {
-                        srcs: ["arm/libstagefright_foundation-v33.so"],
-                },
-                android_arm64: {
-                        srcs: ["arm64/libstagefright_foundation-v33.so"],
-                },
-        },
-        compile_multilib: "both",
-        check_elf_files: false,
-        vendor: true,
-}
-
-cc_prebuilt_library_shared {
-        name: "libtinyalsa-v32",
-        strip: {
-                none: true,
-        },
-        target: {
-                android_arm: {
-                        srcs: ["arm/libtinyalsa-v32.so"],
-                },
-                android_arm64: {
-                        srcs: ["arm64/libtinyalsa-v32.so"],
-                },
-        },
-        compile_multilib: "both",
-        check_elf_files: false,
-        vendor: true,
 }
