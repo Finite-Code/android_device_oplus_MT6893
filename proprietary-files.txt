@@ -788,7 +788,7 @@ odm/lib64/libCamera_imx766mipiraw20817_zHDR_Face_Capture.so
 odm/lib64/libCamera_imx766mipiraw20817_zHDR_Scene_Capture.so
 odm/lib64/libDeVIS.so
 odm/lib64/libEIS.so
-odm/lib64/libOGLManager.so
+odm/lib64/libOGLManager.so;DISABLE_CHECKELF
 odm/lib64/libRbsFlow.so
 odm/lib64/libRbsFlow_cap.so
 odm/lib64/libVideoEnhance.so
@@ -1183,7 +1183,7 @@ vendor/lib64/mt6893/libdpframework.so;SYMLINK=vendor/lib64/libdpframework.so
 vendor/lib64/mt6893/libgpudataproducer.so;SYMLINK=vendor/lib64/libgpudataproducer.so
 vendor/lib64/mt6893/libmcv_runtime.mtk.so;SYMLINK=vendor/lib64/libmcv_runtime.mtk.so
 vendor/lib64/mt6893/libmdla_ut.so;SYMLINK=vendor/lib64/libmdla_ut.so
-vendor/lib64/mt6893/libmnl.so;SYMLINK=vendor/lib64/libmnl.so
+vendor/lib64/mt6893/libmnl.so;SYMLINK=vendor/lib64/libmnl.so;DISABLE_CHECKELF
 vendor/lib64/mt6893/libmtk_drvb.so;SYMLINK=vendor/lib64/libmtk_drvb.so
 vendor/lib64/mt6893/libnir_neon_driver.so;SYMLINK=vendor/lib64/libnir_neon_driver.so
 vendor/lib64/mt6893/libpq_prot.so;SYMLINK=vendor/lib64/libpq_prot.so
@@ -1482,11 +1482,11 @@ vendor/lib/libimagebuffer_wrapper.so
 vendor/lib/libimgsensorca.so
 vendor/lib/libjpeg-alpha-oal_vendor.so
 vendor/lib/libjpeg-alpha_vendor.so
-vendor/lib/libthha.so
+vendor/lib/libthha.so;DISABLE_CHECKELF
 vendor/lib/libmmprofile.so
-vendor/lib/libmp4enc_sa.ca7.so
-vendor/lib/libmp4enc_xa.ca7.so
-vendor/lib/libvcodec_oal.so
+vendor/lib/libmp4enc_sa.ca7.so;DISABLE_CHECKELF
+vendor/lib/libmp4enc_xa.ca7.so;DISABLE_CHECKELF
+vendor/lib/libvcodec_oal.so;DISABLE_CHECKELF
 vendor/lib/libvcodec_utility.so
 vendor/lib/libvcodecdrv.so
 vendor/lib/libvcodecdrv_header_stub.so
@@ -1524,8 +1524,8 @@ vendor/lib64/libjpeg-alpha_vendor.so
 vendor/lib64/libmfllcore.so
 vendor/lib64/libmmprofile.so
 vendor/lib64/libmtkmipc-ril.so
-vendor/lib64/libthha.so
-vendor/lib64/libvcodec_oal.so
+vendor/lib64/libthha.so;DISABLE_CHECKELF
+vendor/lib64/libvcodec_oal.so;DISABLE_CHECKELF
 vendor/lib64/libvcodecdrv_header_stub.so
 vendor/lib64/libvia-ril.so
 vendor/lib64/libviagpsrpc.so
@@ -1832,7 +1832,7 @@ vendor/lib/libdynamiclog.so
 vendor/lib/liblpcnr.so
 vendor/lib/libmsbc_mtk.so
 vendor/lib/libmtcloader.so
-vendor/lib/libpkm.so
+vendor/lib/libpkm.so;DISABLE_CHECKELF
 vendor/lib/libsimlock.so
 vendor/lib/libsimmelock.so
 vendor/lib/libsysenv.so
@@ -1853,7 +1853,7 @@ vendor/lib64/libmsnr.so
 vendor/lib64/libmtcloader.so
 vendor/lib64/libmtk-fusion-ril-prop-vsim.so
 vendor/lib64/libmtk-ril.so
-vendor/lib64/libpkm.so
+vendor/lib64/libpkm.so;DISABLE_CHECKELF
 vendor/lib64/libpqpconfig.so
 vendor/lib64/libratconfig.so
 vendor/lib64/librilfusion.so
