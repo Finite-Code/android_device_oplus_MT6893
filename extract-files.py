@@ -76,6 +76,13 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libsensor_custom.so': blob_fixup()
         .binary_regex_replace(b'android.sensor.wise_light', b'android.sensor.light\x00\x00\x00\x00\x00')
         .sig_replace('5B 00 01 00', '05 00 00 00'),
+    ('vendor/lib64/lib3a.sensors.color.so',
+    'vendor/lib64/lib3a.sensors.flicker.so',
+    'vendor/lib*/libaaa_ltm.so',
+    'vendor/lib64/lib3a.ae.stat.so',
+    'vendor/lib64/lib3a.flash.so',
+    'vendor/lib64/libSQLiteModule_VER_ALL.so'): blob_fixup()
+        .add_needed('liblog.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
