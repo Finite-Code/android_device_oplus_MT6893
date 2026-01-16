@@ -25,6 +25,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service': blob_fixup()
         .replace_needed('libutils.so', 'libutils-v32.so')
         .replace_needed('libhidlbase.so', 'libhidlbase-v32.so'),
+    'vendor/lib64/hw/vendor.mediatek.hardware.pq@2.15-impl.so': blob_fixup()
+        .replace_needed('libutils.so', 'libutils-v32.so'),
     'vendor/lib*/hw/audio.primary.mt6893.so': blob_fixup()
         .replace_needed('libalsautils.so', 'libalsautils-v31.so')
         .replace_needed('libtinyalsa.so', 'libtinyalsa-v32.so'),
