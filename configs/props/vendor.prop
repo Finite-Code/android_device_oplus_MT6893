@@ -131,9 +131,6 @@ ro.vendor.fm.platform=connac2x
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 
-# FRP
-ro.frp.pst=/dev/block/by-name/frp
-
 # GPS
 ro.vendor.mtk_agps_app=1
 ro.vendor.mtk_gps_support=1
