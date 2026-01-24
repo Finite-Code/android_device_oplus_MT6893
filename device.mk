@@ -14,7 +14,6 @@ PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
 # Call proprietary blob setup
 $(call inherit-product-if-exists, packages/apps/OneplusParts/parts.mk)
 $(call inherit-product-if-exists, vendor/oplus/camera/camera.mk)
-$(call inherit-product-if-exists, packages/apps/PocketMode/pocket_mode.mk)
 
 # Inherit common MediaTek IMS
 $(call inherit-product, vendor/mediatek/ims/ims.mk)
