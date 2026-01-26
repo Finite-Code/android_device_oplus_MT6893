@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021-2024 The LineageOS Project
+ * Copyright (C) 2021-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,14 +10,20 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
+import android.os.PowerManager
 import android.os.SystemClock
 import android.util.Log
-
+import android.view.Display
 import java.util.concurrent.Executors
 
-class PocketSensor(
-    private val context: Context, sensorType: String, private val sensorValue: Float
+class PickupSensor(
+    private val context: Context,
+    sensorType: String,
+    private val sensorValue: Float,
 ) : SensorEventListener {
+    private val powerManager = context.getSystemService(PowerManager::class.java)!!
+    private val wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG)
+
     private val sensorManager = context.getSystemService(SensorManager::class.java)!!
     private val sensor = Utils.getSensor(sensorManager, sensorType)
 
@@ -32,7 +38,17 @@ class PocketSensor(
         }
         entryTimestamp = SystemClock.elapsedRealtime()
         if (event.values[0] == sensorValue) {
-            Utils.launchDozePulse(context)
+            if (Utils.isPickUpSetToWake(context)) {
+                wakeLock.acquire(WAKELOCK_TIMEOUT_MS)
+                powerManager.wakeUpWithProximityCheck(
+                    SystemClock.uptimeMillis(),
+                    PowerManager.WAKE_REASON_GESTURE,
+                    TAG,
+                    Display.DEFAULT_DISPLAY,
+                )
+            } else {
+                Utils.launchDozePulse(context)
+            }
         }
     }
 
@@ -51,16 +67,15 @@ class PocketSensor(
     fun disable() {
         if (sensor != null) {
             Log.d(TAG, "Disabling")
-            executorService.submit {
-                sensorManager.unregisterListener(this, sensor)
-            }
+            executorService.submit { sensorManager.unregisterListener(this, sensor) }
         }
     }
 
     companion object {
-        private const val TAG = "PocketSensor"
+        private const val TAG = "PickupSensor"
         private const val DEBUG = false
 
         private const val MIN_PULSE_INTERVAL_MS = 2500L
+        private const val WAKELOCK_TIMEOUT_MS = 300L
     }
 }
