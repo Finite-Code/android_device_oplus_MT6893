@@ -48,7 +48,8 @@ PRODUCT_PACKAGES += \
     WifiOverlayDenniz \
     LineageSDKOverlay \
     LineageSettingsProviderOverlay \
-    ApertureOverlay
+    ApertureOverlay \
+    KeyHandlerOverlay
 
 # Enforce RRO targets
 PRODUCT_ENFORCE_RRO_TARGETS := *
