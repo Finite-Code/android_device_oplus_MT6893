@@ -33,6 +33,7 @@ allow hal_fingerprint_default hal_commondcs_oplus_hwservice:hwservice_manager fi
 allow hal_fingerprint_default oplus_hal_ormsHal_hwservice:hwservice_manager find;
 allow hal_fingerprint_default hal_performance_oplus_hwservice:hwservice_manager find;
 allow hal_fingerprint_default hal_osense_oplus_hwservice:hwservice_manager find;
+allow hal_fingerprint_default osense_service:service_manager find;
 
 get_prop(hal_fingerprint_default, system_oplus_project_prop)
 set_prop(hal_fingerprint_default, system_fingerprint_prop)
