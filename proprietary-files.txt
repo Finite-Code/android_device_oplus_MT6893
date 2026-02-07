@@ -1547,6 +1547,7 @@ vendor/lib64/libMtkOmxCore.so
 vendor/lib64/libacdk.so
 vendor/lib64/libfft_vendor.so
 vendor/lib64/libformatter.so
+vendor/lib64/libmp3dec_mtk.so
 vendor/lib64/libhdrvideo.so
 vendor/lib64/libheichal.so
 vendor/lib64/libhevce_sb.ca7.android.so
