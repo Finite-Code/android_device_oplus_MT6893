@@ -51,6 +51,11 @@ pm.dexopt.shared=speed
 ro.opengles.version=196610
 sys.brightness.disable_gamma_conversion=true
 
+# IMS
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+
 # IPO
 sys.ipo.pwrdncap=2
 sys.ipo.disable=1

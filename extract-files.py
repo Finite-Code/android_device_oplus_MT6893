@@ -54,7 +54,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libcam.utils.sensorprovider.so',
     'vendor/lib64/liboplus_mtkcam_lightsensorprovider.so'): blob_fixup()
         .replace_needed('libsensorndkbridge.so', 'libsensorndkbridge-v30.so'),
-    'vendor/lib/libcodec2_vndk-mtk.so': blob_fixup()
+    ('system_ext/lib64/libsource.so',
+    'vendor/lib/libcodec2_vndk-mtk.so'): blob_fixup()
         .add_needed('libshim_ui.so'),
     ('vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron',
     'vendor/lib*/libnvram.so',
