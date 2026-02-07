@@ -480,6 +480,7 @@ PRODUCT_PACKAGES += \
 
 # VNDK
 PRODUCT_PACKAGES += \
+    libtinyxml2-v34 \
     libcrypto-v32 \
     libssl-v32 \
     libbinder-v32 \
