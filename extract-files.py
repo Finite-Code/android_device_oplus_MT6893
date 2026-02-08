@@ -27,7 +27,7 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libhidlbase.so', 'libhidlbase-v32.so'),
     'vendor/lib64/hw/vendor.mediatek.hardware.pq@2.15-impl.so': blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
-    ('vendor/lib64/hw/vendor.mediatek.hardware.pq@2.15-impl.so',
+    ('vendor/lib*/hw/vendor.mediatek.hardware.pq@2.15-impl.so',
     'vendor/lib64/libmtkcam_stdutils.so'): blob_fixup()
         .replace_needed('libutils.so', 'libutils-v32.so'),
     'vendor/lib*/hw/audio.primary.mt6893.so': blob_fixup()
@@ -59,6 +59,8 @@ blob_fixups: blob_fixups_user_type = {
     ('system_ext/lib64/libsource.so',
     'vendor/lib/libcodec2_vndk-mtk.so'): blob_fixup()
         .add_needed('libshim_ui.so'),
+    'system_ext/lib64/libimsma.so': blob_fixup()
+        .replace_needed('libsink.so', 'libsink-mtk.so'),
     ('vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron',
     'vendor/lib*/libnvram.so',
     'odm/bin/hw/vendor.oplus.hardware.charger@1.0-service',
