@@ -1427,7 +1427,7 @@ system/framework/mediatek-telephony-common.jar
 system/framework/mediatek-telephony-base.jar|9803c5df30b21000f5f473e9395f0fd9c555f0cd
 
 # IMS (Patched Apk) from c.12 RMX3031-user 12 SP1A.210812.016 1663769087038 release-keys 
-system/priv-app/ImsService/ImsService.apk|d9d6e5540b769edcc19157099b834b69e345e5f9
+system/priv-app/ImsService/ImsService.apk|3ece6846240d260a3822da3428c43f4af0255139
 
 # IMS
 odm/lib/vendor.oplus.hardware.ims@1.0.so
