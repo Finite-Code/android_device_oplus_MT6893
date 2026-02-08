@@ -57,4 +57,12 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oplus.hardware.osense.client</name>
+        <version>1.0</version>
+        <interface>
+            <name>IOsenseHalReporter</name>
+            <instance>OsenseHalReporter</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>
