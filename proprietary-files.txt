@@ -350,12 +350,7 @@ odm/etc/audio/oplus_audio_features.xml
 odm/firmware/tfa98xx.cnt
 
 # AudioPolicyConfigs
-vendor/etc/audio_policy_configuration_a2dp_offload_disabled.xml
-vendor/etc/audio_policy_configuration_a2dp_offload_disabled_cg_enabled.xml
-vendor/etc/audio_policy_configuration_a2dp_offload_enable_cg_enable.xml
-vendor/etc/bluetooth_a2dp_offload_ums_offload_audio_policy_configuration.xml
 vendor/etc/bluetooth_offload_audio_policy_configuration.xml
-vendor/etc/bluetooth_ums_offload_audio_policy_configuration.xml
 vendor/etc/default_volume_tables.xml
 
 # Bluetooth

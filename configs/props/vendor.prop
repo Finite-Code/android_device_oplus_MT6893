@@ -20,9 +20,6 @@ ro.vendor.mtk_audio_ape_support=1
 # Bluetooth
 persist.vendor.bluetooth.leaudio_mode=ums
 ro.vendor.bluetooth.bt_multidevice_perform=600
-ro.bluetooth.a2dp_offload.supported=true
-persist.bluetooth.a2dp_offload.cap=sbc-aac
-persist.bluetooth.a2dp_offload.disabled=true
 ro.vendor.bluetooth.a2dp_aac_vbr.is_disabled=true
 bluetooth.profile.sap.server.enabled=false
 bluetooth.profile.bas.client.enabled=true
