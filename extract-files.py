@@ -61,6 +61,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libshim_ui.so'),
     'system_ext/lib64/libimsma.so': blob_fixup()
         .replace_needed('libsink.so', 'libsink-mtk.so'),
+    'vendor\lib64\liboppo_arcSoftBokehEngine.so': blob_fixup()
+        .replace_needed('libmpbase.so', 'libmpbase_oplus.so'),
     ('vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron',
     'vendor/lib*/libnvram.so',
     'odm/bin/hw/vendor.oplus.hardware.charger@1.0-service',
