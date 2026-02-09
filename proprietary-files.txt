@@ -797,7 +797,6 @@ odm/lib64/liblvimfs.so
 odm/lib64/liblvimfs_wrapper.so;DISABLE_DEPS
 odm/lib64/libmindroid-app.so
 odm/lib64/libmindroid-framework.so
-odm/lib64/libml_util.so
 odm/lib64/libmotionblur.so
 odm/lib64/libmpbase.so:odm/lib64/libmpbase_oplus.so;FIX_SONAME
 odm/lib64/libnp-loader.so
