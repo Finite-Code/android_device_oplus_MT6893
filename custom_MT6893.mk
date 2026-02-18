@@ -11,7 +11,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/oplus/MT6893/device.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/custom/config/common_full_phone.mk)
+# $(call inherit-product, vendor/custom/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := custom_MT6893
