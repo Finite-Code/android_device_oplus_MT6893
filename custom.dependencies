@@ -1,0 +1,19 @@
+[
+  {
+    "repository": "android_device_oplus_mt6893-common",
+    "target_path": "device/oplus/mt6893-common"
+  },
+  {
+    "remote": "gitlab",
+    "repository": "proprietary_vendor_oplus_MT6893",
+    "target_path": "vendor/oplus/MT6893"
+  },
+  {
+    "repository": "android_hardware_mediatek",
+    "target_path": "hardware/mediatek"
+  },
+  {
+    "repository": "android_device_mediatek_sepolicy_vndr",
+    "target_path": "device/mediatek/sepolicy_vndr"
+  }
+]
