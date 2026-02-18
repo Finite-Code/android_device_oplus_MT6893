@@ -5,6 +5,9 @@
 
 DEVICE_PATH := device/oplus/MT6893
 
+# Skip VINTF Checks
+SKIP_CHECK_VINTF := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod

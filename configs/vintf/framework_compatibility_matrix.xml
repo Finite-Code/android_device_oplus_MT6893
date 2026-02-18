@@ -168,13 +168,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.lineage.health</name>
-        <interface>
-            <name>IChargingControl</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <hal format="hidl" optional="true">
         <name>vendor.mediatek.hardware.apmonitor</name>
         <version>2.0</version>
@@ -1271,14 +1264,6 @@
             <instance>mtkSmartRatSwitch2</instance>
             <instance>mtkRsu1</instance>
             <instance>mtkRsu2</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.lineage.touch</name>
-        <version>1.0</version>
-        <interface>
-            <name>ITouchscreenGesture</name>
-            <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">

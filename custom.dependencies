@@ -1,9 +1,5 @@
 [
   {
-    "repository": "android_device_oplus_mt6893-common",
-    "target_path": "device/oplus/mt6893-common"
-  },
-  {
     "remote": "gitlab",
     "repository": "proprietary_vendor_oplus_MT6893",
     "target_path": "vendor/oplus/MT6893"

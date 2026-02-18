@@ -31,26 +31,29 @@ class PickupSensor(
     private var entryTimestamp = 0L
 
     override fun onSensorChanged(event: SensorEvent) {
-        if (DEBUG) Log.d(TAG, "Got sensor event: ${event.values[0]}")
-        val delta = SystemClock.elapsedRealtime() - entryTimestamp
-        if (delta < MIN_PULSE_INTERVAL_MS) {
-            return
-        }
-        entryTimestamp = SystemClock.elapsedRealtime()
-        if (event.values[0] == sensorValue) {
-            if (Utils.isPickUpSetToWake(context)) {
-                wakeLock.acquire(WAKELOCK_TIMEOUT_MS)
-                powerManager.wakeUpWithProximityCheck(
-                    SystemClock.uptimeMillis(),
-                    PowerManager.WAKE_REASON_GESTURE,
-                    TAG,
-                    Display.DEFAULT_DISPLAY,
-                )
-            } else {
-                Utils.launchDozePulse(context)
-            }
-        }
-    }
+    	if (DEBUG) Log.d(TAG, "Got sensor event: ${event.values[0]}")
+    	val delta = SystemClock.elapsedRealtime() - entryTimestamp
+    	if (delta < MIN_PULSE_INTERVAL_MS) {
+        	return
+    	}
+    	entryTimestamp = SystemClock.elapsedRealtime()
+    
+    	if (event.values[0] == sensorValue) {
+        	wakeLock.acquire(WAKELOCK_TIMEOUT_MS)
+        	if (Utils.isPickUpSetToWake(context)) {
+            		// AOSP: Use standard wakeUp (no proximity check available)
+            		powerManager.wakeUp(
+                		SystemClock.uptimeMillis(),
+                		PowerManager.WAKE_REASON_GESTURE,
+                		TAG
+            		)
+        	} else {
+            		Utils.launchDozePulse(context)
+        	}
+        		wakeLock.release()
+    		}
+	}
+
 
     override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
 
